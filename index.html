@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mis páginas web favoritas</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 2rem;
+    padding: 0;
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+  }
+
+  h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  ul li {
+    margin-bottom: 10px;
+  }
+
+  ul li a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  ul li a:hover {
+    text-decoration: underline;
+  }
+
+  .element-none {
+    display: none;
+  }
+
+  .element-block {
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<h1>Mis páginas web favoritas</h1>
+
+<button onclick="toggleSection('ia')">IA</button>
+<button onclick="toggleSection('developer')">Developer</button>
+<button onclick="toggleSection('textTools')">TextTools</button>
+<button onclick="toggleSection('software')">Software</button>
+<button onclick="toggleSection('courses')">Courses</button>
+<button onclick="toggleSection('hardware')">Hardware</button>
+<button onclick="reset()">Reset</button>
+
+<div class="element-none" id="ia">
+  <h2>IA</h2>
+  <ul>
+    <li>
+      <h4>Chatbot</h4>
+      <ul>
+        <li>
+          <a href="https://chat.openai.com/?model=text-davinci-002-render-sha">ChatGPT</a>
+        </li>
+        <li>
+          <a href="https://gemini.google.com/app">Gemini</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <h4>Generative Art</h4>
+      <ul>
+        <li>
+          <a href="https://www.midjourney.com/home?callbackUrl=%2Fapp%2F">Midjourney</a>
+        </li>
+        <li>
+          <a href="https://www.bluewillow.ai/">BlueWillow</a>
+        </li>
+        <li>
+          <a href="https://leonardo.ai/">Leonardo</a>
+        </li>
+        <li>
+          <a href="https://labs.openai.com/">DALL·E 2</a>
+        </li>
+        <li>
+          <a href="https://www.upscale.media/es">UpscaleMedia - Mejorar calidad de Imagen</a>
+        </li>
+        <li>
+          <a href="https://www.adobe.com/es/products/firefly.html">Adobe Firefly</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <h4>Help</h4>
+      <ul>
+        <li>
+          <a href="https://platform.openai.com/">Help ChatGPT</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="element-none" id="developer">
+  <h2>Developer</h2>
+  <ul>
+    <li>
+      <h4>JavaScript</h4>
+      <ul>
+        <li>
+          <a href="https://playcode.io/new">Playcode</a>
+        </li>
+        <li>
+          <a href="https://developer.mozilla.org/es/">MDN Web Docs</a>
+        </li>
+        <li>
+          <a href="https://ramdajs.com/">Libreria Ramda</a>
+        </li>
+        <li>
+          <a href="https://evgenykochetkov.github.io/ramda-cheatsheet/">Ramda v0.25.0</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <h4>Help Testing</h4>
+      <ul>
+        <li>
+          <a href="https://petstore.swagger.io/">petstore.swagger - Pruebas swagger.</a>
+        </li>
+        <li>
+          <a href="https://demoqa.com/">DemoQA - Pruebas elementos HTML.</a>
+        </li>
+        <li>
+          <a href="https://reqres.in/">reqres - Pruebas Backend.</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <h4>Docker</h4>
+      <ul>
+        <li>
+          <a href="https://hub.docker.com/">DockerHub - Repositorio de imagenes para Docker</a>
+        </li>
+        <li>
+          <a href="https://devdocs.io/docker~1.11-compose/">Help Docker</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://devdocs.io/">devdocs.io - Documentacion de lenguajes de desarrollo.</a>
+    </li>
+    <li>
+      <a href="https://overapi.com/">overapi - Chuletas de lenguajes de programacion.</a>
+    </li>
+    <li>
+      <a href="https://jsonpath.com/">jsonpath</a>
+    </li>
+    <li>
+      <a href="https://jsonviewer.stack.hu/">jsonviewer</a>
+    </li>
+    <li>
+      <a href="https://regex101.com/">Practicar Expresiones Regulares</a>
+    </li>
+    <li>
+      <a href="https://playcode.io/new">Playcode</a>
+    </li>
+    <li>
+      <a href="https://peter.sh/experiments/chromium-command-line-switches/">Lista de comando para ChromeDriver</a>
+    </li>
+    <li>
+      <a href="https://nekocalc.com/es/px-a-rem-conversor">Convertidor de Pixeles a REM</a>
+    </li>
+    <li>
+      <a href="https://docs.getxray.app/display/XRAY/Import+Execution+Results+-+REST">Doc XRAY</a>
+    </li>
+  </ul>
+</div>
+
+<div class="element-none" id="textTools">
+  <h2>TextTools</h2>
+  <ul>
+    <li>
+      <a href="https://www.contarcaracteres.com/">Contarcaracteres</a>
+    </li>
+    <li>
+      <a href="https://www.spellboy.com/corrector-gramatical/">Corrector Gramatical</a>
+    </li>
+    <li>
+      <a href="https://www.deepl.com/translator">deepl - Traductor</a>
+    </li>
+    <li>
+      <a href="https://www.pdf2go.com/es">Conversor de PDF</a>
+    </li>
+  </ul>
+</div>
+
+<div class="element-none" id="software">
+  <h2>Software</h2>
+  <ul>
+    <li>
+      <a href="https://ninite.com/">Ninite - Descarga de programas basicos y gratis.</a>
+    </li>
+    <li>
+      <a href="https://alternativeto.net/">AlternativeTo - Buscardor de alternativas de software gratis.</a>
+    </li>
+  </ul>
+</div>
+
+<div class="element-none" id="courses">
+  <h2>Courses</h2>
+  <ul>
+    <li>
+      <a href="https://www.udemy.com/">Udemy</a>
+    </li>
+    <li>
+      <a href="https://es.duolingo.com/">Duolingo - Idiomas.</a>
+    </li>
+    <li>
+      <a href="https://miriadax.net/">Miriadax</a>
+    </li>
+  </ul>
+</div>
+
+<div class="element-none" id="hardware">
+  <h2>Hardware</h2>
+  <ul>
+    <li>
+      <a href="https://www.geeknetic.es/calculadora-fuente-alimentacion">Calculadora de Fuente de Alimentacion</a>
+    </li>
+    <li>
+      <a href="https://pcpartpicker.com">pcpartpicker - Simulador para montar un equipo y comparar productos.</a>
+    </li>
+  </ul>
+</div>
+
+<script>
+
+  function toggleSection(id) {
+    var section = document.getElementById(id);
+    if (section.className === "element-none") {
+      section.className= "element-block";
+    } else {
+      section.className = "element-none";
+    }
+  }
+
+  function reset() {
+    var sections = document.querySelectorAll('.element-block');
+
+    sections.forEach(function(section) {
+      section.className = "element-none";
+    });
+  }
+
+</script>
+
+</body>
+</html>
