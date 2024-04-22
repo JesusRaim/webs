@@ -58,6 +58,10 @@
         text-decoration: underline;
       }
 
+      ul li button {
+        padding: 2px 5px;
+      }
+
       .element-none {
         display: none;
       }
@@ -75,6 +79,10 @@
     <button onclick="toggleSection('software')">Software</button>
     <button onclick="toggleSection('courses')">Courses</button>
     <button onclick="toggleSection('hardware')">Hardware</button>
+    <button onclick="toggleSection('shopping')">Shopping</button>
+    <button onclick="toggleSection('games')">Games</button>
+    <button onclick="toggleSection('windows')">Windows</button>
+    <button onclick="toggleSection('pcgaming')">PC-Gaming</button>
     <button onclick="reset()">Reset</button>
 
     <div class="element-none" id="ia">
@@ -171,6 +179,9 @@
           </ul>
         </li>
         <li>
+          <a href="https://allthetags.com/">Tags para desarrollador Web - HTML5</a>
+        </li>
+        <li>
           <a href="https://devdocs.io/">devdocs.io - Documentacion de lenguajes de desarrollo.</a>
         </li>
         <li>
@@ -222,10 +233,57 @@
       <h2>Software</h2>
       <ul>
         <li>
+          <a href="https://www.ventoy.net/en/index.html">Ventoy - MultiBoot Pendrive y poder añadir las isos que quereamos dependiendo de la capacidad de este.</a>
+          <button onclick="toggleSection('ventoy')">Detalles</button>
+          <ul class="element-none" id="ventoy">
+            <li>Pasos:</li>
+            <li>- Descargar el software</li>
+            <li>- Descomprimimos el archivo descargado</li>
+            <li>- Ejecutamos el exe ventoy2disk</li>
+            <li>- Selecionamos el pendrive en el que lo queremos instalar</li>
+            <li>
+              - (Opcional, por defecto MBR) Tenemos que selecionar el tipo de particion:
+              <ul>
+                <li>- Menu Option -> estilo de particion:</li>
+                <li>- MBR: Resto de equipos</li>
+                <li>- GPT: Equipos con UEFFI</li>
+              </ul>
+            </li>
+            <li>- (Opcional) Cambiar el lenguaje</li>
+            <li>- El pendrive se renombra con el nombre Ventoy, entonces esta listo</li>
+            <li>- Copiamos las isos dentro del pendrrive, por ejemplo Hirent, windows 10, windows 11, etc.</li>
+            <li>- Podemos meter tantas isos como cojan dentro del Pendrive dependindo del tamaño de este.</li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://medicatusb.com/">Mediacat USB - Software para distintas tareas.</a>
+          <button onclick="toggleSection('mediacat')">Detalles</button>
+          <ul class="element-none" id="mediacat">
+            <li>- Eliminar contraseñas</li>
+            <li>- Analisis del equipo</li>
+            <li>- Particiones de disco duro</li>
+            <li>- Recuperacion de datos</li>
+            <li>- Hacer backup</li>
+            <li>- Mas</li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://technical.city/es">Technical City - Comparador de Graficas y Procesadores.</a>
+        </li>
+        <li>
+          <a href="https://nanoreview.net/en/cpu-compare">NanoReview - Comparador de Graficas y Procesadores.</a>
+        </li>
+        <li>
+          <a href="https://www.systemrequirementslab.com/cyri">Can You Run - Verificar se un juego corre en la PC.</a>
+        </li>
+        <li>
           <a href="https://ninite.com/">Ninite - Descarga de programas basicos y gratis.</a>
         </li>
         <li>
           <a href="https://alternativeto.net/">AlternativeTo - Buscardor de alternativas de software gratis.</a>
+        </li>
+        <li>
+          <a href="https://www.planyourroom.com/">Plan Your Room - Diseñar habitaciones.</a>
         </li>
       </ul>
     </div>
@@ -253,6 +311,144 @@
         </li>
         <li>
           <a href="https://pcpartpicker.com">pcpartpicker - Simulador para montar un equipo y comparar productos.</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="element-none" id="shopping">
+      <h2>Shopping</h2>
+      <ul>
+        <li>
+          <a href="https://www.emugames.net/">EmuGames - Emuladores.</a>
+        </li>
+        <li>
+          <a href="https://es.boardgamearena.com/">Board game arena - Juegos de mesa en linea.</a>
+        </li>
+        <li>
+          <a href="https://gocdkeys.es/">Go CD Keys - Compra de claves para Software.</a>
+        </li>
+        <li>
+          <a href="https://difmark.com/es">DIFMARK - Compra de claves para Software.</a>
+        </li>
+        <li>
+          <a href="https://www.instant-gaming.com/es/">Instant Gaming - Compra de Juegos.</a>
+        </li>
+        <li>
+          <a href="https://www.humblebundle.com/">Humble Bundle - Compra de Juegos.</a>
+        </li>
+        <li>
+          <a href="https://web.tulotero.es/">Tu Lotero - Compra de loteria.</a>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="element-none" id="games">
+      <h2>Games</h2>
+      <ul>
+        <li>
+          <a href="https://www.instant-gaming.com/es/">Instant Gaming - Compra de Juegos.</a>
+        </li>
+        <li>
+          <a href="https://www.humblebundle.com/">Humble Bundle - Compra de Juegos.</a>
+        </li>
+        <li>
+          <a href="https://github.com/gibbed/SteamAchievementManager">Software para conseguir todos los logros en Steam.</a>
+        </li>
+        <li>
+          <a href="https://web.tulotero.es/">Tu Lotero - Compra de loteria.</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="element-none" id="windows">
+      <h2>Windows</h2>
+      <ul>
+        <li>
+          Comprobar el estado de la RAM.
+          <button onclick="toggleSection('ram')">Detalles</button>
+          <ul class="element-none" id="ram">
+            <li>Windows + R</li>
+            <li>mdsched.exe</li>
+          </ul>
+        </li>
+        <li>
+          Comprobar los Discos Duros.
+          <button onclick="toggleSection('cdd')">Detalles</button>
+          <ul class="element-none" id="cdd">
+            <li>cmd - chkdsk</li>
+            <li>Para un escaneo mas profundo y reparacion de archivos dañados: cmd - chkdsk c: /f</li>
+          </ul>
+        </li>
+        <li>
+          Eliminacion de Software Malintencionado.
+          <button onclick="toggleSection('ESM')">Detalles</button>
+          <ul class="element-none" id="ESM">
+            <li>Windows + R - mrt</li>
+          </ul>
+        </li>
+        <li>
+          Mantenimiento del Sistema.
+          <button onclick="toggleSection('MS')">Detalles</button>
+          <ul class="element-none" id="MS">
+            <li>Ejecutar: MSDT -id Maintenancediagnostic</li>
+          </ul>
+        </li>
+        <li>
+          Eliminar archivos temporales.
+          <button onclick="toggleSection('EAT')">Detalles</button>
+          <ul class="element-none" id="EAT">
+            <li>Ejecutar: prefetch</li>
+            <li>Ejecutar: %temp%</li>
+            <li>Ejecutar: temp</li>
+          </ul>
+        </li>
+        <li>
+          Activar modo dios.
+          <button onclick="toggleSection('AMD')">Detalles</button>
+          <ul class="element-none" id="AMD">
+            <li>Crear una carpeta con el nombre: GodMode.{ED7BA470-8E54465-825C-99712043E01C}</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="element-none" id="pcgaming">
+      <h2>PC-Gaming</h2>
+      <ul>
+        <li>
+          Activar Windows en modo Juego
+          <button onclick="toggleSection('AWMJ')">Detalles</button>
+          <ul class="element-none" id="AWMJ">
+            <li>
+              Cuando usas el Modo Juego, Windows da prioridad a tu esperiencia de juego desactivando todo en segundo plano.<br>
+              En el buscador de Windows: Modo Juego y marcar el check.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Aumentar Rendimiento.
+          <button onclick="toggleSection('AR')">Detalles</button>
+          <ul class="element-none" id="AR">
+            <li>En el plan de energia, configurarlo como alto rendimiento.</li>
+            <li>Abrir en panel de control de NVIDIAN - Configuracion 3D - Controlar la configuracion 3D - GPU de renderizado de OpenGL - Configurar con nuestra Grafica.</li>
+            <li>En la misma ubicacion anterior, Modo baja latencia - Configurarlo como ultra.</li>
+            <li>En la misma ubicacion anterior, Modo de control de energia - Configurarlo como Maximo Rendimiento Preferido.</li>
+          </ul>
+        </li>
+        <li>
+          Controlar el Rendimiento del PC mientras juegas.
+          <button onclick="toggleSection('CRJ')">Detalles</button>
+          <ul class="element-none" id="CRJ">
+            <li>Presionamos: Control + g - Podemos configurar la ventana de rendimiento y anclarla para poder ver en todo momento el rendimiento que tiene nuestro equipo.</li>
+          </ul>
+        </li>
+        <li>
+          Desactivar la Mejora de Puntero del Raton.
+          <button onclick="toggleSection('DMPR')">Detalles</button>
+          <ul class="element-none" id="DMPR">
+            <li>Configuracion del Mouse - Opciones avanzadas - Pestaña Opciones del Puntero - Desactivar la opcion Mejorar la Precision del Puntero.</li>
+          </ul>
         </li>
       </ul>
     </div>
