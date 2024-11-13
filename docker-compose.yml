@@ -1,0 +1,21 @@
+
+version: '3.8'
+
+services:
+  web:
+    image: nginx:alpine
+    container_name: Front-Webs
+    ports:
+      - "8080:80"
+    volumes:
+      - C:\Proyectos\Visual\Front-Webs:/usr/share/nginx/html
+    restart: always
+
+# Levantar contenedor, opcion build la consola se queda dentro del contenedor
+# docker-compose up --build
+
+# Para contenedor
+# docker-compose down
+
+# Acceso
+# http://localhost:8080
