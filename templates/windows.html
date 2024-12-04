@@ -1,0 +1,92 @@
+<div id="windows">
+
+    <!-- Windows -->
+    <h3 class="mt-3 text-center">Windows</h3>
+    <ul class="list-group">
+        <li class="list-group-item">
+            Comprobar el estado de la RAM.
+            <button class="btn btn-primary ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#detalleRAM" aria-expanded="false" aria-controls="collapseExample">
+                Detalle
+            </button>
+            <div class="mt-3 collapse" id="detalleRAM">
+                <ul>
+                    <li>Windows + R</li>
+                    <li>mdsched.exe</li>
+                </ul>
+            </div>
+        </li>
+        <li class="list-group-item">
+            Comprobar los Discos Duros.
+            <button class="btn btn-primary ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#detalleDiscoDuro" aria-expanded="false" aria-controls="collapseExample">
+                Detalle
+            </button>
+            <div class="mt-3 collapse" id="detalleDiscoDuro">
+                <ul>
+                    <li>cmd - chkdsk</li>
+                    <li>Para un escaneo mas profundo y reparacion de archivos dañados: cmd - chkdsk c: /f</li>
+                </ul>
+            </div>
+        </li>
+        <li class="list-group-item">
+            Eliminacion de Software Malintencionado.
+            <button class="btn btn-primary ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#detalleMalintencionado" aria-expanded="false" aria-controls="collapseExample">
+                Detalle
+            </button>
+            <div class="mt-3 collapse" id="detalleMalintencionado">
+                <ul>
+                    <li>Windows + R - mrt</li>
+                </ul>
+            </div>
+        </li>
+        <li class="list-group-item">
+            Mantenimiento del Sistema.
+            <button class="btn btn-primary ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#detalleMantenimientoSistema" aria-expanded="false" aria-controls="collapseExample">
+                Detalle
+            </button>
+            <div class="mt-3 collapse" id="detalleMantenimientoSistema">
+                <ul>
+                    <li>Ejecutar: MSDT -id Maintenancediagnostic</li>
+                </ul>
+            </div>
+        </li>
+        <li class="list-group-item">
+            Eliminar archivos temporales.
+            <button class="btn btn-primary ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#detalleEliminarArchivosTemporales" aria-expanded="false" aria-controls="collapseExample">
+                Detalle
+            </button>
+            <div class="mt-3 collapse" id="detalleEliminarArchivosTemporales">
+                <ul>
+                    <li>Ejecutar: prefetch</li>
+                    <li>Ejecutar: %temp%</li>
+                    <li>Ejecutar: temp</li>
+                </ul>
+            </div>
+        </li>
+        <li class="list-group-item">
+            Activar modo dios.
+            <button class="btn btn-primary ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#detalleModoDios" aria-expanded="false" aria-controls="collapseExample">
+                Detalle
+            </button>
+            <div class="mt-3 collapse" id="detalleModoDios">
+                <ul>
+                    <li>Crear una carpeta con el nombre: GodMode.{ED7BA470-8E54465-825C-99712043E01C}</li>
+                </ul>
+            </div>
+        </li>
+        <li class="list-group-item">
+            Iniciar la bios desde el escritorio.
+            <button class="btn btn-primary ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#detalleBiosEscritorio" aria-expanded="false" aria-controls="collapseExample">
+                Detalle
+            </button>
+            <div class="mt-3 collapse" id="detalleBiosEscritorio">
+                <ul>
+                    <li>Crear acceso directo</li>
+                    <li>En la ubicacion escribir: shutdown /r /fw</li>
+                    <li>Podemos asignar un nombre</li>
+                    <li>Tenemos que ejecutar en modo Administrador.</li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+
+</div>

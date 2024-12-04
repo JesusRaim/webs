@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webs</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 2rem;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-top: 20px;
+      }
+
+      h4 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+      }
+
+      button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+
+      ul li {
+        margin-bottom: 10px;
+      }
+
+      ul li a {
+        color: #333;
+        text-decoration: none;
+      }
+
+      ul li a:hover {
+        text-decoration: underline;
+      }
+
+      ul li button {
+        padding: 2px 5px;
+      }
+
+      .element-none {
+        display: none;
+      }
+
+      .element-block {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+
+    <button onclick="toggleSection('ia')">IA</button>
+    <button onclick="toggleSection('developer')">Developer</button>
+    <button onclick="toggleSection('textTools')">TextTools</button>
+    <button onclick="toggleSection('software')">Software</button>
+    <button onclick="toggleSection('courses')">Courses</button>
+    <button onclick="toggleSection('hardware')">Hardware</button>
+    <button onclick="toggleSection('shopping')">Shopping</button>
+    <button onclick="toggleSection('games')">Games</button>
+    <button onclick="toggleSection('windows')">Windows</button>
+    <button onclick="toggleSection('pcgaming')">PC-Gaming</button>
+    <button onclick="reset()">Reset</button>
+    <a href="templates/green-hell.html">Green hell</a>
+
+    <div class="element-none" id="ia">
+      <h2>IA</h2>
+      <ul>
+        <li>
+          <a href="https://www.toolify.ai/">Toolify - Herramientas con IA</a>
+        </li>
+        <li>
+          <a href="https://www.futuretools.io/">Futuretools - Herramientas con IA</a>
+        </li>
+        <li>
+          <a href="https://tome.app/">Tome - Crear presentaciones</a>
+        </li>
+        <li>
+          <a href="https://askyourpdf.com/es">Askyourpdf - Subes un documento PDF y puedes hacer preguntas sobre el</a>
+        </li>
+        <li>
+          <h4>Chatbot</h4>
+          <ul>
+            <li>
+              <a href="https://chat.openai.com/?model=text-davinci-002-render-sha">ChatGPT</a>
+            </li>
+            <li>
+              <a href="https://gemini.google.com/app">Gemini</a>
+            </li>
+            <li>
+              <a href="https://platform.openai.com/playground/chat">Playground</a>
+            </li>
+            <li>ChatHub - Cliente de chatbot todo en uno - Extension de Chrome que te permite realizar la misma pregunta a varios Chatbot IA </li>
+          </ul>
+        </li>
+        <li>
+          <h4>Generative Art</h4>
+          <ul>
+            <li>
+              <a href="https://www.midjourney.com/home?callbackUrl=%2Fapp%2F">Midjourney</a>
+            </li>
+            <li>
+              <a href="https://www.bluewillow.ai/">BlueWillow</a>
+            </li>
+            <li>
+              <a href="https://leonardo.ai/">Leonardo</a>
+            </li>
+            <li>
+              <a href="https://labs.openai.com/">DALL·E 2</a>
+            </li>
+            <li>
+              <a href="https://www.upscale.media/es">UpscaleMedia - Mejorar calidad de Imagen</a>
+            </li>
+            <li>
+              <a href="https://www.adobe.com/es/products/firefly.html">Adobe Firefly</a>
+            </li>
+            <li>
+              <a href="https://letsenhance.io/">Letsenhance - Mejora la calidad de las imagenes</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>Help</h4>
+          <ul>
+            <li>
+              <a href="https://platform.openai.com/">Help ChatGPT</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Terminado -->
+
+    <div class="element-none" id="developer">
+      <h2>Developer</h2>
+      <ul>
+        <li>
+          <h4>JavaScript</h4>
+          <ul>
+            <li>
+              <a href="https://playcode.io/new">Playcode</a>
+            </li>
+            <li>
+              <a href="https://developer.mozilla.org/es/">MDN Web Docs</a>
+            </li>
+            <li>
+              <a href="https://ramdajs.com/">Libreria Ramda</a>
+            </li>
+            <li>
+              <a href="https://evgenykochetkov.github.io/ramda-cheatsheet/">Ramda v0.25.0</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>Help Testing</h4>
+          <ul>
+            <li>
+              <a href="https://petstore.swagger.io/">petstore.swagger - Pruebas swagger.</a>
+            </li>
+            <li>
+              <a href="https://demoqa.com/">DemoQA - Pruebas elementos HTML.</a>
+            </li>
+            <li>
+              <a href="https://reqres.in/">reqres - Pruebas Backend.</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>Docker</h4>
+          <ul>
+            <li>
+              <a href="https://hub.docker.com/">DockerHub - Repositorio de imagenes para Docker</a>
+            </li>
+            <li>
+              <a href="https://devdocs.io/docker~1.11-compose/">Help Docker</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://allthetags.com/">Tags para desarrollador Web - HTML5</a>
+        </li>
+        <li>
+          <a href="https://devdocs.io/">devdocs.io - Documentacion de lenguajes de desarrollo.</a>
+        </li>
+        <li>
+          <a href="https://overapi.com/">overapi - Chuletas de lenguajes de programacion.</a>
+        </li>
+        <li>
+          <a href="https://jsonpath.com/">jsonpath</a>
+        </li>
+        <li>
+          <a href="https://jsonviewer.stack.hu/">jsonviewer</a>
+        </li>
+        <li>
+          <a href="https://regex101.com/">Practicar Expresiones Regulares</a>
+        </li>
+        <li>
+          <a href="https://playcode.io/new">Playcode</a>
+        </li>
+        <li>
+          <a href="https://peter.sh/experiments/chromium-command-line-switches/">Lista de comando para ChromeDriver</a>
+        </li>
+        <li>
+          <a href="https://nekocalc.com/es/px-a-rem-conversor">Convertidor de Pixeles a REM</a>
+        </li>
+        <li>
+          <a href="https://docs.getxray.app/display/XRAY/Import+Execution+Results+-+REST">Doc XRAY</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Terminado -->
+
+    <div class="element-none" id="textTools">
+      <h2>TextTools</h2>
+      <ul>
+        <li>
+          <a href="https://www.contarcaracteres.com/">Contarcaracteres</a>
+        </li>
+        <li>
+          <a href="https://www.spellboy.com/corrector-gramatical/">Corrector Gramatical</a>
+        </li>
+        <li>
+          <a href="https://www.deepl.com/translator">deepl - Traductor</a>
+        </li>
+        <li>
+          <a href="https://www.pdf2go.com/es">Conversor de PDF</a>
+        </li>
+      </ul>
+    </div> <!-- fin textTools-->
+    
+    <!-- Terminado -->
+
+    <div class="element-none" id="software">
+      <h2>Software</h2>
+      <ul>
+        <li>
+          <a href="https://www.ventoy.net/en/index.html">Ventoy - MultiBoot Pendrive y poder añadir las isos que quereamos dependiendo de la capacidad de este.</a>
+          <button onclick="toggleSection('ventoy')">Detalles</button>
+          <ul class="element-none" id="ventoy">
+            <li>Pasos:</li>
+            <li>- Descargar el software</li>
+            <li>- Descomprimimos el archivo descargado</li>
+            <li>- Ejecutamos el exe ventoy2disk</li>
+            <li>- Selecionamos el pendrive en el que lo queremos instalar</li>
+            <li>
+              - (Opcional, por defecto MBR) Tenemos que selecionar el tipo de particion:
+              <ul>
+                <li>- Menu Option -> estilo de particion:</li>
+                <li>- MBR: Resto de equipos</li>
+                <li>- GPT: Equipos con UEFFI</li>
+              </ul>
+            </li>
+            <li>- (Opcional) Cambiar el lenguaje</li>
+            <li>- El pendrive se renombra con el nombre Ventoy, entonces esta listo</li>
+            <li>- Copiamos las isos dentro del pendrrive, por ejemplo Hirent, windows 10, windows 11, etc.</li>
+            <li>- Podemos meter tantas isos como cojan dentro del Pendrive dependindo del tamaño de este.</li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://medicatusb.com/">Mediacat USB - Software para distintas tareas.</a>
+          <button onclick="toggleSection('mediacat')">Detalles</button>
+          <ul class="element-none" id="mediacat">
+            <li>- Eliminar contraseñas</li>
+            <li>- Analisis del equipo</li>
+            <li>- Particiones de disco duro</li>
+            <li>- Recuperacion de datos</li>
+            <li>- Hacer backup</li>
+            <li>- Mas</li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://technical.city/es">Technical City - Comparador de Graficas y Procesadores.</a>
+        </li>
+        <li>
+          <a href="https://nanoreview.net/en/cpu-compare">NanoReview - Comparador de Graficas y Procesadores.</a>
+        </li>
+        <li>
+          <a href="https://www.systemrequirementslab.com/cyri">Can You Run - Verificar se un juego corre en la PC.</a>
+        </li>
+        <li>
+          <a href="https://ninite.com/">Ninite - Descarga de programas basicos y gratis.</a>
+        </li>
+        <li>
+          <a href="https://alternativeto.net/">AlternativeTo - Buscardor de alternativas de software gratis.</a>
+        </li>
+        <li>
+          <a href="https://www.planyourroom.com/">Plan Your Room - Diseñar habitaciones.</a>
+        </li>
+        <li>
+          <a href="https://letsenhance.io/">Letsenhance - Mejora la calidad de las imagenes</a>
+        </li>
+        <li>
+          <a href="https://tome.app/">Tome - Crear presentaciones</a>
+        </li> 
+        <li>
+          <a href="https://askyourpdf.com/es">Askyourpdf - Subes un documento PDF y puedes hacer preguntas sobre el</a>
+        </li>
+        <li>
+          Hyper-V - Maquinas virtuales en Windows
+          <button onclick="toggleSection('hyperv')">Detalles</button>
+          <ul class="element-none" id="hyperv">
+            <li>- Tenemos que tener una version pro de Windows</li>
+            <li>- Tenemos que tener activada la virtualizacion -> Administrador de tareas - Rendimiento</li>
+            <li>- Instalar Hyper-V -> Instalar Caracteristicas de Windows</li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://www.airdroid.com/es/cast/">AirDroid Cast - Permite mandar la pantalla del movil al PC</a>
+        </li>
+        <li>
+          <a href="https://www.pdfgear.com/">PDFgear - Distintas herramientas para modificar PDF</a>
+        </li>
+        <li>
+          <h4>Particiones Disco</h4>
+          <ul>
+            <li>DiskGenius</li>
+            <li>BalenaEtcher</li>
+            <li>Win32DiksImager</li>
+          </ul>
+        </li>
+        <li>
+          <h4>Imagenes</h4>
+          <ul>    
+            <li>
+              <a href="https://www.canva.com/es_es/">Canva - Retocar Imagenes</a>
+            </li>
+            <li>
+              <a href="https://www7.lunapic.com/editor/">Lunapic - Retocar Imagenes</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>CV</h4>
+          <ul>
+            <li>
+              <a href="https://www.cutout.pro/es/passport-photo-maker/upload">Foto CV</a>
+            </li>
+            <li>
+              <a href="https://www.hireflow.net/">Mejora tu CV</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div> <!-- Fin Software -->
+
+    <!-- Terminado -->
+
+    <div class="element-none" id="courses">
+      <h2>Courses</h2>
+      <ul>
+        <li>
+          <a href="https://www.udemy.com/">Udemy</a>
+        </li>
+        <li>
+          <a href="https://es.duolingo.com/">Duolingo - Idiomas.</a>
+        </li>
+        <li>
+          <a href="https://miriadax.net/">Miriadax</a>
+        </li>
+      </ul>
+    </div><!-- Fin courses -->
+
+    <!-- Terminado -->
+
+    <div class="element-none" id="hardware">
+      <h2>Hardware</h2>
+      <ul>
+        <li>
+          <a href="https://www.geeknetic.es/calculadora-fuente-alimentacion">Calculadora de Fuente de Alimentacion</a>
+        </li>
+        <li>
+          <a href="https://pcpartpicker.com">pcpartpicker - Simulador para montar un equipo y comparar productos.</a>
+        </li>
+      </ul>
+    </div><!-- hardware -->
+
+    <!-- terminado -->
+
+    <div class="element-none" id="shopping">
+      <h2>Shopping</h2>
+      <ul>
+        <li>
+          <a href="https://www.emugames.net/">EmuGames - Emuladores.</a>
+        </li>
+        <li>
+          <a href="https://es.boardgamearena.com/">Board game arena - Juegos de mesa en linea.</a>
+        </li>
+        <li>
+          <a href="https://gocdkeys.es/">Go CD Keys - Compra de claves para Software.</a>
+        </li>
+        <li>
+          <a href="https://difmark.com/es">DIFMARK - Compra de claves para Software.</a>
+        </li>
+        <li>
+          <a href="https://www.instant-gaming.com/es/">Instant Gaming - Compra de Juegos.</a>
+        </li>
+        <li>
+          <a href="https://www.humblebundle.com/">Humble Bundle - Compra de Juegos.</a>
+        </li>
+        <li>
+          <a href="https://web.tulotero.es/">Tu Lotero - Compra de loteria.</a>
+        </li>
+
+      </ul>
+    </div><!-- fin shopping -->
+
+    <!-- terminado -->
+
+    <div class="element-none" id="games">
+      <h2>Games</h2>
+      <ul>
+        <li>
+          <a href="https://www.systemrequirementslab.com/cyri">Can You Run - Verificar se un juego corre en la PC.</a>
+        </li>
+        <li>
+          <a href="https://mapgenie.io/">Map Genie - Mapas de Juegos y todos los coleccionables</a>
+        </li>
+        <li>
+          <a href="https://github.com/gibbed/SteamAchievementManager">Software para conseguir todos los logros en Steam.</a>
+        </li>
+        <li>
+          <a href="https://cdromance.org/?s=army+men&language=spanish">Descargar juegos de consolas.</a>
+        </li>
+        <li>
+          <a href="https://aprendiz.foroactivo.com/t11-compresion-del-juego-en-formato-pbp-formato-playstation-psp">PSX2PSP - Programa para la compresion de juegos en formato PBP, formato PlayStation y PSP.</a>
+          <a href="https://docs.google.com/document/d/1LZ84sM88vHOTUzS7HGAJQkoc8ItjVtfL/edit?pli=1">Enlace alternativo</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- terminado -->
+
+    <div class="element-none" id="windows">
+      <h2>Windows</h2>
+      <ul>
+        <li>
+          Comprobar el estado de la RAM.
+          <button onclick="toggleSection('ram')">Detalles</button>
+          <ul class="element-none" id="ram">
+            <li>Windows + R</li>
+            <li>mdsched.exe</li>
+          </ul>
+        </li>
+        <li>
+          Comprobar los Discos Duros.
+          <button onclick="toggleSection('cdd')">Detalles</button>
+          <ul class="element-none" id="cdd">
+            <li>cmd - chkdsk</li>
+            <li>Para un escaneo mas profundo y reparacion de archivos dañados: cmd - chkdsk c: /f</li>
+          </ul>
+        </li>
+        <li>
+          Eliminacion de Software Malintencionado.
+          <button onclick="toggleSection('ESM')">Detalles</button>
+          <ul class="element-none" id="ESM">
+            <li>Windows + R - mrt</li>
+          </ul>
+        </li>
+        <li>
+          Mantenimiento del Sistema.
+          <button onclick="toggleSection('MS')">Detalles</button>
+          <ul class="element-none" id="MS">
+            <li>Ejecutar: MSDT -id Maintenancediagnostic</li>
+          </ul>
+        </li>
+        <li>
+          Eliminar archivos temporales.
+          <button onclick="toggleSection('EAT')">Detalles</button>
+          <ul class="element-none" id="EAT">
+            <li>Ejecutar: prefetch</li>
+            <li>Ejecutar: %temp%</li>
+            <li>Ejecutar: temp</li>
+          </ul>
+        </li>
+        <li>
+          Activar modo dios.
+          <button onclick="toggleSection('AMD')">Detalles</button>
+          <ul class="element-none" id="AMD">
+            <li>Crear una carpeta con el nombre: GodMode.{ED7BA470-8E54465-825C-99712043E01C}</li>
+          </ul>
+        </li>
+        <li>
+          Iniciar la bios desde el escritorio
+          <button onclick="toggleSection('bios')">Detalles</button>
+          <ul class="element-none" id="bios">
+            <li>Crear acceso directo</li>
+            <li>En la ubicacion escribir: shutdown /r /fw</li>
+            <li>Podemos asignar un nombre</li>
+            <li>Tenemos que ejecutar en modo Administrador.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Terminado -->
+
+    <div class="element-none" id="pcgaming">
+      <h2>PC-Gaming</h2>
+      <ul>
+        <li>
+          Activar Windows en modo Juego
+          <button onclick="toggleSection('AWMJ')">Detalles</button>
+          <ul class="element-none" id="AWMJ">
+            <li>
+              Cuando usas el Modo Juego, Windows da prioridad a tu esperiencia de juego desactivando todo en segundo plano.<br>
+              En el buscador de Windows: Modo Juego y marcar el check.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Aumentar Rendimiento.
+          <button onclick="toggleSection('AR')">Detalles</button>
+          <ul class="element-none" id="AR">
+            <li>En el plan de energia, configurarlo como alto rendimiento.</li>
+            <li>Abrir en panel de control de NVIDIAN - Configuracion 3D - Controlar la configuracion 3D - GPU de renderizado de OpenGL - Configurar con nuestra Grafica.</li>
+            <li>En la misma ubicacion anterior, Modo baja latencia - Configurarlo como ultra.</li>
+            <li>En la misma ubicacion anterior, Modo de control de energia - Configurarlo como Maximo Rendimiento Preferido.</li>
+          </ul>
+        </li>
+        <li>
+          Controlar el Rendimiento del PC mientras juegas.
+          <button onclick="toggleSection('CRJ')">Detalles</button>
+          <ul class="element-none" id="CRJ">
+            <li>Presionamos: Control + g - Podemos configurar la ventana de rendimiento y anclarla para poder ver en todo momento el rendimiento que tiene nuestro equipo.</li>
+          </ul>
+        </li>
+        <li>
+          Desactivar la Mejora de Puntero del Raton.
+          <button onclick="toggleSection('DMPR')">Detalles</button>
+          <ul class="element-none" id="DMPR">
+            <li>Configuracion del Mouse - Opciones avanzadas - Pestaña Opciones del Puntero - Desactivar la opcion Mejorar la Precision del Puntero.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Terminado -->
+
+    <script>
+
+      function toggleSection(id) {
+        var section = document.getElementById(id);
+        if (section.className === "element-none") {
+          section.className= "element-block";
+        } else {
+          section.className = "element-none";
+        }
+      }
+
+      function reset() {
+        var sections = document.querySelectorAll('.element-block');
+
+        sections.forEach(function(section) {
+          section.className = "element-none";
+        });
+      }
+
+    </script>
+
+  </body>
+</html>
