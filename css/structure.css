@@ -1,0 +1,17 @@
+/* Asegurar que html y body ocupen el 100% de la altura */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Hacer que el contenido principal crezca según el espacio disponible */
+  main {
+    flex: 1;
+  }
+
+  /* Estilo adicional para el footer */
+  footer {
+    margin-top: auto;
+  }
