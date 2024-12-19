@@ -14,4 +14,11 @@ body {
   a:hover {
     text-decoration: underline;
   }
+
+  .nav-link.active {
+    font-weight: bold;
+    color: #0d6efd !important; /* Color primario de Bootstrap */
+    text-decoration: underline; /* Subraya el enlace activo */
+    text-underline-offset: 4px; /* Ajusta la distancia del subrayado */
+}
   
