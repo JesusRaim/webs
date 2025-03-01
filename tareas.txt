@@ -1,4 +1,4 @@
-- Selecion en el menu de la opcion en la que te encuentras
+
 - Eliminar ficheros basura
     - index2.html --> web anterior
     - enlacen en index.html del index2.html
@@ -7,3 +7,7 @@
 - Cada apartado de la seccion escondido?
 - Poner mi logo
 - Cambiar el aspecto de los enlaces
+- Ver que hacer con los manuales de los software
+
+Añadir software nuevo sobre la R36S
+añadir manual test Hardware
