@@ -1,5 +1,4 @@
 
-- Añadir al menu el green-hell
 - Que hacer con los titulos de cada seccion
 - Cada apartado de la seccion escondido?
 - Poner mi logo
