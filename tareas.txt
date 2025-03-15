@@ -1,10 +1,12 @@
 
-- Que hacer con los titulos de cada seccion
-- Cada apartado de la seccion escondido?
+- Quitar cabecera
 - Poner mi logo
 - Cambiar el aspecto de los enlaces
 - Ver que hacer con los manuales de los software
 - Seccion other por movie
+- DPI del raton
+    400, 800, 1600, 3200 (lo que yo tengo ahora mismo configurados)
 
 Añadir software nuevo sobre la R36S
+
 añadir manual test Hardware
