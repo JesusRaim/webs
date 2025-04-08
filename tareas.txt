@@ -1,5 +1,4 @@
 
-- Quitar cabecera
 - Poner mi logo
 - Cambiar el aspecto de los enlaces
 - Ver que hacer con los manuales de los software
@@ -10,3 +9,5 @@
 Añadir software nuevo sobre la R36S
 
 añadir manual test Hardware
+
+Crear html para las evoluciones de los digimos

@@ -66,7 +66,6 @@ const menu = document.querySelectorAll('a[href^="#"]'); // Elementos del menu
  */
 menu.forEach((enlace) => {
   enlace.addEventListener('click', () => {
-    headerValue(enlace);
     selectedMenuOption(menu, enlace);
     loadContent('templates/', enlace);
   });
