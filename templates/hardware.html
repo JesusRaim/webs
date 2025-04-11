@@ -10,4 +10,170 @@
             <a href="https://pcpartpicker.com" class="nav-link" target="_blank">pcpartpicker - Simulador para montar un equipo y comparar productos.</a>
         </li>
     </ul>
+
+    <!-- Temperaturas Hardware -->
+    <h3 class="mt-3 text-center" data-bs-toggle="collapse" href="#temperature" style="cursor: pointer;">Temperaturas</h3>
+    <ul id="temperature" class="list-group collapse">
+        <table class="table table-bordered table-light">
+            <tr>
+                <th>Componente</th>
+                <th>Reposo (°C)</th>
+                <th>Carga Moderada (°C)</th>
+                <th>Carga Máxima (°C)</th>
+                <th>Peligroso (°C)</th>
+            </tr>
+            <tr>
+                <td>CPU</td>
+                <td>30 - 50</td>
+                <td>50 - 70</td>
+                <td class="table-warning">70 - 85</td>
+                <td class="table-danger">+90</td>
+            </tr>
+            <tr>
+                <td>GPU</td>
+                <td>30 - 50</td>
+                <td>50 - 60</td>
+                <td class="table-warning">60 - 85</td>
+                <td class="table-danger">+90</td>
+            </tr>
+            <tr>
+                <td>RAM</td>
+                <td>30</td>
+                <td>30 - 50</td>
+                <td class="table-warning">50 - 60</td>
+                <td class="table-danger">+60</td>
+            </tr>
+            <tr>
+                <td>SSD / HDD</td>
+                <td>30</td>
+                <td>30 - 60</td>
+                <td class="table-warning">60</td>
+                <td class="table-danger">+60</td>
+            </tr>
+            <tr>
+                <td>Motherboard VRMs</td>
+                <td>30</td>
+                <td>30 - 60</td>
+                <td class="table-warning">60 - 80</td>
+                <td class="table-danger">+90</td>
+            </tr>
+        </table>
+    </ul>
+
+    <!-- Test Hardware -->
+    <h3 class="mt-3 text-center" data-bs-toggle="collapse" href="#testHardware" style="cursor: pointer;">Test de Hardware</h3>
+    <ul id="testHardware" class="list-group collapse">
+
+        <!-- Herramientas de Monitoreo -->
+        <h4 class="mt-4 text-center" data-bs-toggle="collapse" href="#monitoringTools" style="cursor: pointer;">* Herramientas de Monitoreo</h4>
+        <ul id="monitoringTools" class="list-group collapse">
+            <li class="list-group-item">
+                <b>
+                    <a href="https://www.cpuid.com/softwares/hwmonitor.html" target="_blank">HWMonitor</a>
+                </b> (Gratuito): Muestra temperaturas, voltajes y uso de CPU/GPU en tiempo real.
+            </li>
+            <li class="list-group-item">
+                <b>
+                    <a href="https://www.hwinfo.com/" target="_blank">HWiNFO</a>
+                </b> (Gratuito): Más avanzado, con gráficos detallados y mucha información técnica.
+            </li>
+            <li class="list-group-item">
+                <b>
+                    <a href="https://openhardwaremonitor.org/" target="_blank">Open Hardware Monitor</a>
+                </b> (Gratuito): Alternativa de código abierto y ligera.
+            </li>
+        </ul>
+
+        <!-- Test Tarjeta Gráfica -->
+        <h4 class="mt-4 text-center" data-bs-toggle="collapse" href="#graphicsCardTest" style="cursor: pointer;">* Test Tarjeta Gráfica</h4>
+        <ul id="graphicsCardTest" class="list-group collapse">
+            <li class="list-group-item">
+                <b>
+                    <a href="https://www.3dmark.com/" target="_blank">3DMark</a>
+                </b> (De pago, con prueba gratuita): Analiza el rendimiento de la tarjeta gráfica simulando juegos. (Steam)
+            </li>
+            <li class="list-group-item">
+                <b>
+                    <a href="https://benchmark.unigine.com/superposition" target="_blank">Unigine Superposition</a>
+                </b> (Gratuito): No probado.
+            </li>
+        </ul>
+
+        <!-- Test CPU -->
+        <h4 class="mt-4 text-center" data-bs-toggle="collapse" href="#CPUTest" style="cursor: pointer;">* Test CPU</h4>
+        <ul id="CPUTest" class="list-group collapse">
+            <li class="list-group-item">
+                <b>
+                    <a href="https://www.mersenne.org/download/" target="_blank">Prime95</a>
+                </b> (Gratuito): Ideal para pruebas de estrés extremo y estabilidad del procesador.
+            </li>
+            <li class="list-group-item">
+                <b>
+                    <a href="https://www.maxon.net/en/cinebench" target="_blank">Cinebench R23</a>
+                </b> (Gratuito): Evalúa el rendimiento del procesador.
+            </li>
+            <li class="list-group-item">
+                <b>
+                    <a href="https://www.intel.com/content/www/us/en/download/15951/intel-processor-diagnostic-tool.html" target="_blank">Intel Processor Diagnostic Tool</a>
+                </b> (Gratuito): Prueba completa para procesadores Intel.
+            </li>
+            <li class="list-group-item">
+                <b>
+                    <a href="https://www.amd.com/en/technologies/ryzen-master" target="_blank">Ryzen Master</a>
+                </b> (Gratuito): Herramienta de monitoreo y ajuste para AMD Ryzen.
+            </li>
+        </ul>
+
+        <!-- Test RAM -->
+        <h4 class="mt-4 text-center" data-bs-toggle="collapse" href="#RAMTest" style="cursor: pointer;">* Test RAM</h4>
+        <ul id="RAMTest" class="list-group collapse">
+            <li class="list-group-item">
+                <b>
+                    <a href="https://www.memtest86.com/" target="_blank">MemTest86</a>
+                </b> (Gratuito para uso básico, versión de pago disponible): Test exhaustivo de errores en la RAM.
+            </li>
+            <li class="list-group-item">
+                <b>
+                    <a href="https://docs.microsoft.com/en-us/windows/client-management/windows-memory-diagnostic" target="_blank">Windows Memory Diagnostic</a>
+                </b> (Gratuito): Herramienta integrada en Windows.
+            </li>
+        </ul>
+
+        <!-- Test de SSD / HDD -->
+        <h4 class="mt-4 text-center" data-bs-toggle="collapse" href="#SSDAndHDDTest" style="cursor: pointer;">* Test de SSD / HDD</h4>
+        <ul id="SSDAndHDDTest" class="list-group collapse">
+            <li class="list-group-item">
+                <b>
+                    <a href="https://crystalmark.info/en/software/crystaldiskinfo/" target="_blank">CrystalDiskInfo</a>
+                </b> (Gratuito): Muestra la salud del disco y su temperatura.
+            </li>
+            <li class="list-group-item">
+                <b>
+                    <a href="https://crystalmark.info/en/software/crystaldiskmark/" target="_blank">CrystalMarkRetro</a>
+                </b> (Gratuito): Pruebas de rendimiento de disco, CPU, RAM y GPU.
+            </li>
+            <li class="list-group-item">
+                <b>
+                    <a href="https://www.hdtune.com/" target="_blank">HD Tune</a>
+                </b> (De pago, con versión gratuita limitada): Diagnóstico de sectores defectuosos.
+            </li>
+        </ul>
+
+        <!-- Test Motherboard y Fuente de Alimentación -->
+        <h4 class="mt-4 text-center" data-bs-toggle="collapse" href="#motherboardAndPowerTest" style="cursor: pointer;">* Test Motherboard y Fuente de Alimentación</h4>
+        <ul id="motherboardAndPowerTest" class="list-group collapse">
+            <li class="list-group-item">
+                <b>
+                    <a href="https://www.cpuid.com/softwares/hwmonitor.html" target="_blank">HWMonitor</a>
+                </b> (Gratuito): Para ver voltajes y temperaturas.
+            </li>
+            <li class="list-group-item">
+                <b>
+                    <a href="https://www.ocbase.com/" target="_blank">OCCT</a>
+                </b> (De pago, con prueba gratuita): Prueba de estabilidad de placa base, CPU y fuente de alimentación.
+            </li>
+        </ul>
+        
+    <!-- Termina ul Test Hardware -->
+    </ul>
 </div>

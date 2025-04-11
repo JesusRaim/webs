@@ -8,6 +8,4 @@
 
 Añadir software nuevo sobre la R36S
 
-añadir manual test Hardware
-
 Crear html para las evoluciones de los digimos
