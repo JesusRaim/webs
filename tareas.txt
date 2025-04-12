@@ -1,9 +1,9 @@
-- Selecion en el menu de la opcion en la que te encuentras
-- Eliminar ficheros basura
-    - index2.html --> web anterior
-    - enlacen en index.html del index2.html
-- Añadir al menu el green-hell
-- Que hacer con los titulos de cada seccion
-- Cada apartado de la seccion escondido?
+
 - Poner mi logo
 - Cambiar el aspecto de los enlaces
+- Ver que hacer con los manuales de los software
+- Seccion other por movie
+- DPI del raton
+    400, 800, 1600, 3200 (lo que yo tengo ahora mismo configurados)
+
+Añadir software nuevo sobre la R36S

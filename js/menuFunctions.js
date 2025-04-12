@@ -1,10 +1,19 @@
 // FUNCIONES
 
 /**
+ * Carga paginas html en el boy actual
+ * 
+ * @param {String} id identificador del enlace 
+ */
+function loadLink(id) {
+  loadContent('templates/games/', document.getElementById(id));
+}
+
+/**
  * Carga el cuerpo de las distintas seciones.
  */
-function loadContent(enlace) {
-  const file = 'templates/' + enlace.getAttribute('href').replace('#', '') + '.html';
+function loadContent(path, enlace) {
+  const file = path + enlace.getAttribute('href').replace('#', '') + '.html';
   const contentDiv = document.getElementById('container');
   fetch(file)
     .then((response) => {
@@ -35,6 +44,7 @@ function selectedMenuOption(menu, enlace) {
 
 /**
  * Pone el valor al header de la seccion que esta activa
+ * 
  * @param {Element} enlace 
  */
 function headerValue(enlace) {
@@ -52,13 +62,12 @@ const menu = document.querySelectorAll('a[href^="#"]'); // Elementos del menu
 
 /**
  * Evento click que se intercepta en el menu
+ * 
  */
 menu.forEach((enlace) => {
   enlace.addEventListener('click', () => {
-    headerValue(enlace);
     selectedMenuOption(menu, enlace);
-    loadContent(enlace);
+    loadContent('templates/', enlace);
   });
 });
-
   
