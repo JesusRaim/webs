@@ -7,5 +7,3 @@
     400, 800, 1600, 3200 (lo que yo tengo ahora mismo configurados)
 
 Añadir software nuevo sobre la R36S
-
-Crear html para las evoluciones de los digimos
