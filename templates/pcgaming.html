@@ -50,4 +50,30 @@
         </li>
     </ul>
 
+    <!-- Bugs Game -->
+     <h3 class="mt-3 text-center" data-bs-toggle="collapse" href="#bugsGame" style="cursor: pointer;">Bugs Game</h3>
+     <ul id="bugsGame" class="list-group collapse">
+        <li class="list-group-item">
+            Arreglos de torines, bajos fps y micro-congelamientos
+            <button class="btn btn-primary ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#detalleTironesFPSCongelamiento" aria-expanded="false" aria-controls="collapseExample">
+                Detalle
+            </button>
+            <div class="mt-3 collapse" id="detalleTironesFPSCongelamiento">
+                Uno de los fallo que me ha dado un juego en especifico, Spider-Man 2, esta en las librerias <strong>dstorage.dll y dstoragecore.dll</strong><br>
+                Estas librerias las usa Microsoft para dar mas velocidad de lectura al cargar datos, pero hay una version que no funciona bien y hace que te pegue tirones, bajos FPS y micro-congelamientos.<br>
+                Por ejemplo estas librerias tambien las usa Horizon, pero en este juego sacaron un parche para bajar la version buena de estas librerias por lo cual no da el error, se ve que en el Spider-Man 2 no han sacado parche para arreglarlo.<br>
+                La solucion es crear una carpera en la raiz del juego que no funciona, y arrastrar las librerias esas, la carpeta puede tener el nombre que quieras.<br>
+                Este arreglo no asegura que funcione en todos los juegos, parece ser algo especial.
+                <ul>
+                    <li>
+                        <a href="https://www.reddit.com/r/spiderman2/comments/1ifvzbg/how_to_fix_stutters_low_fps_and_micro_frezee_in/">Spider-Man 2</a>
+                    </li>
+                    <li>
+                        <a href="https://steamcommunity.com/app/2420110/discussions/0/4355617421472784811/">Horizon</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+     </ul>
+
 </div>

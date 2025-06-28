@@ -17,7 +17,7 @@ Extensiones:
 - Auto Rename Tag: Renombra etiquetas HTML automaticamente al cambiar su apertura o cierre
 - Bootstrap 4, Fton Awesome 4, Font Awesome 5 Free & Pro snippets: Fragmentos de codigo para Bootstrap y Font Awesome
 - HTML CSS support: Añade soporte para CSS en HTML
-- JavaScript (ES6) node snippets: Añade soporte para CSS en HTML
+- JavaScript (ES6) code snippets: Añade soporte para CSS en HTML
 - Live Server: Sirve el proyecto en un servidor local y actualiza automaticamente el navegador al guardar los cambios
 - Path Intellisense: Autocompletado de rutas de archivos
 - Prettier - Code formatter: Formatea automaticamente el codigo
