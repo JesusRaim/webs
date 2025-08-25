@@ -1,12 +1,20 @@
 // FUNCIONES
 
 /**
- * Carga paginas html en el boy actual
+ * Carga paginas html de games en el body actual
  * 
  * @param {String} id identificador del enlace 
  */
-function loadLink(id) {
+function loadLinkGames(id) {
   loadContent('templates/games/', document.getElementById(id));
+}
+
+/**
+ * Carga pagina html de manulas en el body actual
+ * @param {String} id identificador del enlace
+ */
+function loadLinkManuals(id) {
+  loadContent('templates/manuals/', document.getElementById(id));
 }
 
 /**
