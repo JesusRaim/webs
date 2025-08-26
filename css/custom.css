@@ -21,4 +21,8 @@ body {
     text-decoration: underline; /* Subraya el enlace activo */
     text-underline-offset: 4px; /* Ajusta la distancia del subrayado */
 }
+
+img {
+  width: 35rem;
+}
   
