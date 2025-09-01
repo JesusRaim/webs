@@ -1,0 +1,127 @@
+<div id="PSXPackagerGUI">
+    <h2 class="text-primary text-center">PSXPackagerGUI</h2>
+    <p>Una interfaz gráfica (GUI) para PSXPackager</p>
+
+    <h2>Características</h2>
+    <ul>
+        <li>Convertir .BIN+CUE, .ISO, .IMG a .PBP</li>
+        <li>Extraer y convertir .7z, .RAR directamente a .PBP (si solo se encuentra un BIN/CUE/ISO dentro)</li>
+        <li>Fusión automática de discos multitrack</li>
+        <li>Convertir juegos multidisco como Final Fantasy 7 en un solo .PBP</li>
+        <li>Extraer archivos .PBP en .BIN+CUE</li>
+        <li>Conversión por lotes (batch) a/de .PBP</li>
+        <li>Modo de salida para PSP (SLUSXXXXX\EBOOT.PBP)</li>
+        <li>Personalizar recursos de PBP (ICON0, PIC1, etc.) con soporte por lotes</li>
+        <li>Extraer recursos a .PNG/.AT3</li>
+    </ul>
+
+    <h2>Requisitos</h2>
+    <p>Requiere .NET 6.0 (o superior) Desktop Runtime.</p>
+
+    <h2>Primeros pasos</h2>
+    <p>Al abrir PSXPackagerGUI por primera vez, se te preguntará si deseas usar los ajustes para PSP.</p>
+    <ul>
+        <li><strong>“Sí”</strong>: se usará el formato de salida <code>%GAMEID%\EBOOT</code></li>
+        <li><strong>“No”</strong>: se usará <code>%FILENAME%</code></li>
+    </ul>
+    <p>Esto puede cambiarse luego en <strong>Settings &gt; Filename Format</strong>.</p>
+
+    <p>Hay dos modos:</p>
+    <ul>
+        <li><strong>Single Mode</strong> (por defecto)</li>
+        <li><strong>Batch Mode</strong></li>
+    </ul>
+
+    <h2>Single Mode</h2>
+    <h3>Abrir un PBP existente</h3>
+    <ul>
+        <li>Extraer .BIN+CUE desde uno de los cinco discos</li>
+        <li>Extraer imágenes .PNG o sonidos .AT3 desde recursos del PBP</li>
+    </ul>
+
+    <h3>Crear un nuevo PBP</h3>
+    <ul>
+        <li>Cargar .BIN+CUE, .ISO o .IMG en una ranura de disco</li>
+        <li>Cargar recursos (.PNG, .PMF, .AT3) en sus ranuras correspondientes</li>
+    </ul>
+
+    <h2>Batch Mode</h2>
+    <p>Permite procesar múltiples archivos a la vez.</p>
+    <ul>
+        <li>Escanear carpeta para convertir archivos a PBP</li>
+        <li>Convertir archivos .PBP de vuelta a .BIN+CUE</li>
+        <li>Usar recursos personalizados</li>
+        <li>Extraer recursos</li>
+        <li>Generar carpetas de recursos vacías</li>
+    </ul>
+
+    <h2>Personalizar PBPs en Batch Mode</h2>
+    <p>Habilita esto en <strong>Settings &gt; Resources</strong>.</p>
+    <p>PSXPackager buscará archivos coincidentes en el sistema de archivos según <code>Match Path</code>.</p>
+
+    <pre><code>Final Fantasy VII - Disc 2.bin
+        Final Fantasy VII - Disc 2\ICON0.PNG
+        Final Fantasy VII - Disc 2\ICON1.PMF
+        Final Fantasy VII - Disc 2\PIC0.PNG
+        Final Fantasy VII - Disc 2\PIC1.PNG
+        Final Fantasy VII - Disc 2\SND.AT3
+    </code></pre>
+
+    <p>Si un recurso no existe, se ignora (ICON0 y PIC1 usarán los valores por defecto).</p>
+
+    <h2>Juegos multidisco en un solo PBP</h2>
+    <p>Usa archivos .M3U para crear PBPs que contengan varios discos:</p>
+    <pre><code>Final Fantasy VII - Disc 1.bin
+        Final Fantasy VII - Disc 2.bin
+        Final Fantasy VII - Disc 3.bin
+    </code></pre>
+    <p>Batch Mode escaneará los .M3U y los tratará como conjunto.</p>
+
+    <h2>Combinar .BINs multi-track en un solo .BIN+.CUE</h2>
+    <p>Algunos juegos tienen múltiples archivos .BIN por pista (ej: Tomb Raider).</p>
+    <p>Usa la herramienta de combinación en <strong>Settings &gt; Tools</strong>:</p>
+
+    <pre><code>Tomb Raider (USA) (Track 01).bin
+        Tomb Raider (USA) (Track 02).bin
+        ...
+        Tomb Raider (USA) (Track 57).bin
+    </code></pre>
+
+    <p>Debe contener “Track #” en el nombre. Selecciona todos, pulsa OK y se generará un único .BIN y .CUE.</p>
+    <p>El archivo .CUE asumirá que la primera pista es DATA y el resto AUDIO.</p>
+    <p>Si ya tienes un archivo .CUE válido, no es necesario combinar nada.</p>
+    <p>Recomendado: buscar .CUE en <a href="https://github.com/opsxcq/psx-cue-sbi-collection" target="_blank">psx-cue-sbi-collection</a></p>
+
+    <h2>Ejemplo de uso</h2>
+
+    <div class="card mb-4">
+      <div class="card-header bg-primary text-white">
+        Single Mode
+      </div>
+      <div class="card-body">
+        <p>En esta opción nos permite añadir hasta un máximo de <strong>5 .bin</strong></p>
+        <img src="img/PsxPackagerGUI/PsxPackagerGUI1.png" class="img-fluid rounded mb-3" alt="PsxPackagerGUI1">
+        <p>Aquí añadimos los diferentes discos.</p>
+        <img src="img/PsxPackagerGUI/PsxPackagerGUI2.png" class="img-fluid rounded mb-3" alt="PsxPackagerGUI2">
+        <p>Cuando lo tengamos añadido, le damos a <strong>guardar</strong>.</p>
+        <img src="img/PsxPackagerGUI/PsxPackagerGUI3.png" class="img-fluid rounded mb-3" alt="PsxPackagerGUI3">
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header bg-success text-white">
+        Batch Mode
+      </div>
+      <div class="card-body">
+        <p>Opción cuando tenemos varios ficheros y queremos insertarlos todos a la vez. Para mi parecer es mejor opción que la anterior, pero si es un juego simple la podemos usar.</p>
+        <p>En esta opción podemos añadir todos los que queramos, incluso el programa nos pillará los ficheros <strong>.cue</strong>.</p>
+        <img src="img/PsxPackagerGUI/PsxPackagerGUI4.png" class="img-fluid rounded mb-3" alt="PsxPackagerGUI4">
+        <p>Definimos la ruta de la carpeta donde se encuentran los ficheros de nuestro juego y definimos la ruta donde queremos que se guarde la conversión. Pulsamos sobre la lupa para que lea los ficheros y nos tienen que salir en la parte de abajo.</p>
+        <img src="img/PsxPackagerGUI/PsxPackagerGUI5.png" class="img-fluid rounded mb-3" alt="PsxPackagerGUI5">
+        <p>Una vez tenemos los ficheros ya reconocidos, pulsamos en el botón <strong>Start</strong>.</p>
+        <img src="img/PsxPackagerGUI/PsxPackagerGUI6.png" class="img-fluid rounded mb-3" alt="PsxPackagerGUI6">
+        <p class="text-muted">No es de extrañar si al añadir muchos ficheros solo pilla el <strong>.cue</strong>, es algo normal.</p>
+      </div>
+    </div>
+
+</div>
