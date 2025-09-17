@@ -78,4 +78,20 @@ menu.forEach((enlace) => {
     loadContent('templates/', enlace);
   });
 });
-  
+
+// Carga la pagina para pruebas para no tener que interactuar con el menu.
+/*
+fetch('templates/pc.html')
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.text();
+  })
+  .then((html) => {
+    document.getElementById('container').innerHTML = html;
+  })
+  .catch((error) => {
+    document.getElementById('container').innerHTML = `<p>Error al cargar el contenido: ${error.message}</p>`;
+  });
+  */
