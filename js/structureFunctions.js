@@ -1,21 +1,3 @@
-// FUNCIONES
-
-/**
- * Carga paginas html de games en el body actual
- * 
- * @param {String} id identificador del enlace 
- */
-function loadLinkGames(id) {
-  loadContent('templates/games/', document.getElementById(id));
-}
-
-/**
- * Carga pagina html de manulas en el body actual
- * @param {String} id identificador del enlace
- */
-function loadLinkManuals(id) {
-  loadContent('templates/manuals/', document.getElementById(id));
-}
 
 /**
  * Carga el cuerpo de las distintas seciones.
@@ -65,7 +47,6 @@ function headerValue(enlace) {
 }
 
 // ACCIONES
-
 const menu = document.querySelectorAll('a[href^="#"]'); // Elementos del menu
 
 /**
@@ -79,9 +60,29 @@ menu.forEach((enlace) => {
   });
 });
 
+/**
+ * Carga de los modales
+ */
+const fileModals = 'structure/modals.html';
+const miModal = document.getElementById('miModal');
+
+fetch(fileModals)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.text();
+  })
+  .then((html) => {
+    miModal.innerHTML = html;
+  })
+  .catch((error) => {
+    miModal.innerHTML = `<p>Error al cargar el contenido: ${error.message}</p>`;
+  });
+
 // Carga la pagina para pruebas para no tener que interactuar con el menu.
 /*
-fetch('templates/pc.html')
+fetch('templates/developer.html')
   .then((response) => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
