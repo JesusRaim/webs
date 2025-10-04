@@ -1,3 +1,4 @@
+
 <div id="developer-content">
 
     <!-- Developer -->
@@ -76,5 +77,96 @@
           <a href="https://devdocs.io/docker~1.11-compose/" class="nav-link" target="_blank">Help Docker</a>
         </li>
       </ul>
+
+      <!-- Maven -->
+      <h3 class="mt-3 text-center" data-bs-toggle="collapse" href="#maven" style="cursor: pointer;">Maven</h3>
+      <ul id="maven" class="list-group collapse">
+        <li class="list-group-item">
+            <a href="https://mvnrepository.com/" class="nav-link" target="_blank">Maven Repository</a>
+          </li>
+        <li class="list-group-item">
+            <table class="table table-bordered table-striped table-hover">
+              <thead style="background-color: #e3f2fd;">
+                <tr>
+                  <th>Dependencias</th>
+                  <th>Descripción</th>
+                  <th>Codigo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Spring Data JPA (SQL)
+                    <br><br>
+                    <button type="button" class="btn btn-primary"onclick="anotacionesSpringDataJPA()">Anotaciones</button>
+                    <br><br>
+                    <button type="button" class="btn btn-primary"onclick="loadFileModalText_xl('Interface JpaRepository', '../templates/developer/jpaReopitory.html')">Interface JpaRepository</button>
+                  </td>
+                  <td>Nos permite la conexión con la base de datos</td>
+                  <td>
+                    <pre><code>
+&lt;dependency&gt;
+    &lt;groupId&gt;software.amazon.awssdk&lt;/groupId&gt;
+    &lt;artifactId&gt;url-connection-client&lt;/artifactId&gt;
+    &lt;version&gt;2.34.1&lt;/version&gt;
+    &lt;scope&gt;compile&lt;/scope&gt;
+&lt;/dependency&gt;
+                    </code></pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>MySQL Driver (SQL)</td>
+                  <td>Driver para MySQL</td>
+                  <td>
+                    <pre><code>
+&lt;dependency&gt;
+    &lt;groupId&gt;com.mysql&lt;/groupId&gt;
+    &lt;artifactId&gt;mysql-connector-j&lt;/artifactId&gt;
+    &lt;scope&gt;runtime&lt;/scope&gt;
+&lt;/dependency&gt;
+                    </code></pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Lombok (Developer Tools)
+                    <br><br>
+                    <button type="button" class="btn btn-primary"onclick="anotacionesLombok()">Anotaciones</button>
+                  </td>
+                  <td>Reduce código repetitivo en nuestra aplicación</td>
+                  <td>
+                    <pre><code>
+&lt;dependency&gt;
+    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+    &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+    &lt;optional&gt;true&lt;/optional&gt;
+&lt;/dependency&gt;
+                    </code></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+      </ul>
+
+      <!-- Sprint Boot -->
+       <h3 class="mt-3 text-center" data-bs-toggle="collapse" href="#spring-boot" style="cursor: pointer;">Framework Spring Boot</h3>
+       <ul id="spring-boot" class="list-group collapse">
+          <li class="list-group-item">
+            <a href="https://start.spring.io/" class="nav-link" target="_blank">Inicializar un proyecto con Spring Boot</a>
+          </li>
+          
+          <li class="list-group-item">
+            Fichero resources/application.properties.
+            Contiene las propiedades del proyecto
+            <button type="button" class="btn btn-primary"onclick="ficheroApplicationProperties()">Ver Fichero</button>
+          </li>
+
+          <li class="list-group-item">
+            Fichero logback-spring (Configurado para que saque menos logs). Se han eliminado algunos comienzos de etiquetas para poder mostrar el texto
+            <button type="button" class="btn btn-primary"onclick="ficheroLogbackSpring()">Ver Fichero</button>
+          </li>
+
+       </ul>
       
 </div>
