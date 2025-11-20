@@ -109,3 +109,36 @@ function anotacionesLombok() {
 
     modalText_lg('Lombok', template);
 }
+
+/**
+ * pc.html
+ */
+function textGaming() {
+    const template = `<div>
+        <pre>  
+SO: Windows 11 Pro 64-bit
+Procesador: Intel Core i5-11600KF 3.9GHz
+Memoria: Corsair Vengeance LPX DDR4 3200 PC4-25600 16GB CL16
+Gráficos: Gigabyte GeForce RTX 3060 Ti Gaming OC LHR 8GB GDDR6
+        </pre>
+    </div>`;
+
+    modalText_lg('Text Gaming', template);
+}
+
+function textEspecificaciones() {
+    const template = `<div>
+        <pre>
+Motherboard: ASUS PRIME B560-PLUS
+CPU: Intel® Core™ i5-11600KF 3.9GHz
+Refrigeración CPU: Cooler Master MasterLiquid 240L Core ARGB Kit de Refrigeración Líquida
+RAM: 2x Corsair Vengeance LPX DDR4 3200 PC4-25600 8GB CL16
+GPU: Gigabyte GeForce RTX 3060 Ti Gaming OC LHR 8GB GDDR6
+Disco duro: WD Blue SN570 1TB M.2 NVMe
+Fuente de alimentación: Nox Hummer GD750 750W 80 Plus Gold
+Caja: Be Quiet PURE BASE 500DX USB 3.0 Cristal Templado Negra
+        </pre>
+    </div>`;
+
+    modalText_lg('Especificaciones', template);
+}

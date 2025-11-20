@@ -22,27 +22,41 @@
                     <td class="spec-key">Motherboard</td>
                     <td>
                         <div class="d-flex justify-content-between align-items-center">
-                            <div>ASUSTek® COMPUTER INC. PRIME B560-PLUS</div>
+                            <div>ASUS PRIME B560-PLUS</div>
+                            <button class="btn btn-primary ms-2" type="button" onclick="loadFileModalText_xl('ASUS PRIME B560-PLUS', 'templates/pc/motherboard.html')">Detalle</button>
                         </div>
                     </td>
                 </tr>
 
                 <tr class="border-top">
-                    <td class="icon-cell"><i class="bi bi-cpu-fill"></i></td>
+                    <td class="icon-cell"><i class="bi bi-cpu"></i></td>
                     <td class="spec-key">CPU</td>
                     <td>
                       <div class="d-flex justify-content-between align-items-center">
-                        <div>Intel® Core™ i5-11600KF</div>
+                        <div>Intel® Core™ i5-11600KF 3.9GHz</div>
+                        <button class="btn btn-primary ms-2" type="button" onclick="loadFileModalText_xl('Intel Core i5-11600KF 3.9GHz', 'templates/pc/cpu.html')">Detalle</button>
+                      </div>
+                    </td>
+                </tr>
+
+                <tr class="border-top">
+                    <td class="icon-cell"><i class="bi bi-fan"></i></td>
+                    <td class="spec-key">Refrigeración CPU</td>
+                    <td>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div>Cooler Master MasterLiquid 240L Core ARGB Kit de Refrigeración Líquida</div>
+                        <button class="btn btn-primary ms-2" type="button" onclick="loadFileModalText_xl('Cooler Master MasterLiquid 240L Core ARGB Kit de Refrigeración Líquida', 'templates/pc/refrigeracionCPU.html')">Detalle</button>
                       </div>
                     </td>
                 </tr>
 
                 <tr class="border-top">
                     <td class="icon-cell"><i class="bi bi-memory"></i></td>
-                    <td class="spec-key">Memory</td>
+                    <td class="spec-key">RAM</td>
                     <td>
                       <div class="d-flex justify-content-between align-items-center">
-                        <div>2x Corsair DDR4-3200 8 GB (1600MHz)</div>
+                        <div>2x Corsair Vengeance LPX DDR4 3200 PC4-25600 8GB CL16</div>
+                        <button class="btn btn-primary ms-2" type="button" onclick="loadFileModalText_xl('Corsair Vengeance LPX DDR4 3200 PC4-25600 8GB CL16', 'templates/pc/ram.html')">Detalle</button>
                       </div>
                     </td>
                 </tr>
@@ -52,7 +66,8 @@
                     <td class="spec-key">GPU</td>
                     <td>
                       <div class="d-flex justify-content-between align-items-center">
-                        <div>Nvidia® GeForce™ RTX 3060 Ti (8 GB GDDR6)</div>
+                        <div>Gigabyte GeForce RTX 3060 Ti Gaming OC LHR 8GB GDDR6</div>
+                        <button class="btn btn-primary ms-2" type="button" onclick="loadFileModalText_xl('Gigabyte GeForce RTX 3060 Ti Gaming OC LHR 8GB GDDR6', 'templates/pc/gpu.html')">Detalle</button>
                       </div>
                     </td>
                 </tr>
@@ -62,10 +77,92 @@
                     <td class="spec-key">Disco duro</td>
                     <td>
                       <div class="d-flex justify-content-between align-items-center">
-                        <div>WD Blue SN570 1TB</div>
+                        <div>WD Blue SN570 1TB M.2 NVMe</div>
+                        <button class="btn btn-primary ms-2" type="button" onclick="loadFileModalText_xl('WD Blue SN570 1TB M.2 NVMe', 'templates/pc/almacenamiento.html')">Detalle</button>
                       </div>
                     </td>
                 </tr>
+
+                <tr class="border-top border-bottom">
+                    <td class="icon-cell"><i class="bi bi-plug"></i></td>
+                    <td class="spec-key">Fuente de alimentación</td>
+                    <td>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div>Nox Hummer GD750 750W 80 Plus Gold</div>
+                        <button class="btn btn-primary ms-2" type="button" onclick="loadFileModalText_xl('Nox Hummer GD750 750W 80 Plus Gold', 'templates/pc/fuenteAlimentacion.html')">Detalle</button>
+                      </div>
+                    </td>
+                </tr>
+
+                <tr class="border-top border-bottom">
+                    <td class="icon-cell"><i class="bi bi-droplet"></i></td>
+                    <td class="spec-key">Pasta térmica</td>
+                    <td>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div>Arctic MX-4 Pasta Térmica 4 Gramos</div>
+                        <button class="btn btn-primary ms-2" type="button" onclick="loadFileModalText_xl('Arctic MX-4 Pasta Térmica 4 Gramos', 'templates/pc/pastaTermica.html')">Detalle</button>
+                      </div>
+                    </td>
+                </tr>
+
+                <tr class="border-top border-bottom">
+                    <td class="icon-cell"><i class="bi bi-box"></i></td>
+                    <td class="spec-key">Caja</td>
+                    <td>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div>Be Quiet PURE BASE 500DX USB 3.0 Cristal Templado Negra</div>
+                        <button class="btn btn-primary ms-2" type="button" onclick="loadFileModalText_xl('Be Quiet PURE BASE 500DX USB 3.0 Cristal Templado Negra', 'templates/pc/cajaPC.html')">Detalle</button>
+                      </div>
+                    </td>
+                </tr>
+
+                <!--
+                <tr class="border-top border-bottom">
+                    <td class="icon-cell"><i class="bi bi-keyboard"></i></td>
+                    <td class="spec-key">Teclado</td>
+                    <td>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div></div>
+                        <button class="btn btn-primary ms-2" type="button">Detalle</button>
+                      </div>
+                    </td>
+                </tr>
+              -->
+
+                <tr class="border-top border-bottom">
+                    <td class="icon-cell"><i class="bi bi-mouse"></i></td>
+                    <td class="spec-key">Ratón</td>
+                    <td>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div>Razer Basilisk V3</div>
+                        <button class="btn btn-primary ms-2" type="button" onclick="loadFileModalText_xl('Razer Basilisk V3', 'templates/pc/mouse.html')">Detalle</button>
+                      </div>
+                    </td>
+                </tr>
+
+                <tr class="border-top border-bottom">
+                    <td class="icon-cell"><i class="bi bi-headset"></i></td>
+                    <td class="spec-key">Cascos</td>
+                    <td>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div>HyperX Cloud II Auriculares Gaming 7.1 Rojos</div>
+                        <button class="btn btn-primary ms-2" type="button" onclick="loadFileModalText_xl('HyperX Cloud II Auriculares Gaming 7.1 Rojos', 'templates/pc/auriculares.html')">Detalle</button>
+                      </div>
+                    </td>
+                </tr>
+                
+                <!--
+                <tr class="border-top border-bottom">
+                    <td class="icon-cell"><i class="bi bi-speaker"></i></td>
+                    <td class="spec-key">Altavoces</td>
+                    <td>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div></div>
+                        <button class="btn btn-primary ms-2" type="button">Detalle</button>
+                      </div>
+                    </td>
+                </tr>
+                -->
 
                 <tr class="border-top">
                     <td class="icon-cell"><i class="bi bi-windows"></i></td>
@@ -83,19 +180,8 @@
 
             <!-- Acciones -->
             <div class="d-flex gap-2 mt-3">                
-              <button class="btn btn-primary ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#rawCard" aria-expanded="false" aria-controls="collapseExample">Ver Texto</button>
-            </div>
-
-            <!-- Código bruto para copiar rápidamente -->
-            <div class="collapse mt-3" id="rawCard">
-              <div class="card card-body bg-light">
-                <pre id="rawText">
-SO: Windows 11 Pro 64-bit
-Procesador: Intel Core i5-11600KF
-Memoria: 16 GB de RAM
-Gráficos: Nvidia GeForce RTX 3060 Ti (8GB)
-                </pre>
-              </div>
+              <button type="button" class="btn btn-primary"onclick="textGaming()">Text Gaming</button>
+              <button type="button" class="btn btn-primary"onclick="textEspecificaciones()">Text</button>
             </div>
 
           </div>

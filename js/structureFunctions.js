@@ -3,7 +3,14 @@
  * Carga el cuerpo de las distintas seciones.
  */
 function loadContent(path, enlace) {
-  const file = path + enlace.getAttribute('href').replace('#', '') + '.html';
+  // Si enlace llega como null quiere decir ya viene bien formado
+  let file;
+  if (enlace == null) {
+    file = path;
+  } else {
+    file = path + enlace.getAttribute('href').replace('#', '') + '.html';
+  }
+
   const contentDiv = document.getElementById('container');
   fetch(file)
     .then((response) => {
@@ -82,7 +89,7 @@ fetch(fileModals)
 
 // Carga la pagina para pruebas para no tener que interactuar con el menu.
 /*
-fetch('templates/developer.html')
+fetch('templates/pc.html')
   .then((response) => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -95,4 +102,4 @@ fetch('templates/developer.html')
   .catch((error) => {
     document.getElementById('container').innerHTML = `<p>Error al cargar el contenido: ${error.message}</p>`;
   });
-  */
+*/  
