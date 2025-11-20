@@ -7,3 +7,11 @@
     400, 800, 1600, 3200 (lo que yo tengo ahora mismo configurados)
 
 Añadir software nuevo sobre la R36S
+
+
+arreglar la informacion de los componentes que tengo subido a drive
+
+
+
+
+Herramienta de testeo de Windows, se busca como Diagnostico de memoria d Windows --> Pare ver los resuldatos --> Visor de eventos --> Información --> MemoryDiagnostics-Result

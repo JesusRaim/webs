@@ -53,10 +53,12 @@ async function loadFileModalText_lg(titulo, path) {
 
 /**
  * Lee un fichero HTML y lo carga en el modal muy grande
- * @param {String} titulo 
+ * Añade un enlace al fichero en el titulo del modal
+ * @param {String} title 
  * @param {String} path 
  */
-async function loadFileModalText_xl(titulo, path) {
+async function loadFileModalText_xl(title, path) {
+  const titleLink = '<a href="#" onclick="closeModalAndLoadContent(\''+path+'\', \'miModal-xl\')">' + title + '</a>'
   const contenFile = await readFileHTML(path);
-  modalText_xl(titulo, contenFile);
+  modalText_xl(titleLink, contenFile);
 }
