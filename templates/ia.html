@@ -1,64 +1,586 @@
-<div id="ia-content">
+<div id="ia-content" class="ia-course">
 
-  <!-- IA -->
-  <h2 class="text-primary text-center" data-bs-toggle="collapse" href="#ia" style="cursor: pointer;">IA</h2>
-  <ul id="ia" class="list-group collapse show">
-    <li class="list-group-item">
-      <a href="https://www.toolify.ai/" class="nav-link" target="_blank">Toolify - Herramientas con IA</a>
-    </li>
-    <li class="list-group-item">
-      <a href="https://www.futuretools.io/" class="nav-link" target="_blank">Futuretools - Herramientas con IA</a>
-    </li>
-    <li class="list-group-item">
-      <a href="https://tome.app/" class="nav-link" target="_blank">Tome - Crear presentaciones</a>
-    </li>
-    <li class="list-group-item">
-      <a href="https://askyourpdf.com/es" class="nav-link" target="_blank">Askyourpdf - Subes un documento PDF y puedes hacer preguntas sobre el</a>
-    </li> 
-  </ul>
+  <h2 class="text-primary text-center" data-bs-toggle="collapse" href="#ia-panel" style="cursor: pointer;">IA</h2>
 
-  <!-- Chatbot -->
-  <h3 class="mt-3 text-center" data-bs-toggle="collapse" href="#chatbot" style="cursor: pointer;">Chatbot</h3>
-    <ul id="chatbot" class="list-group collapse">
+  <section id="ia-panel" class="collapse show">
+    <div class="ia-overview mb-4">
+      <h3>Desarrollo con IA</h3>
+      <p>
+        Guia practica para trabajar con IA sin perder el control: pedir bien, dar contexto,
+        documentar decisiones, implementar con agentes y verificar antes de aceptar cambios.
+      </p>
+
+      <div class="ia-step-grid">
+        <div class="ia-step">
+          <span>1</span>
+          <strong>Pedir</strong>
+          <p>Define rol, contexto, tarea, restricciones y formato.</p>
+        </div>
+        <div class="ia-step">
+          <span>2</span>
+          <strong>Contextualizar</strong>
+          <p>Usa AGENTS.md, specs, docs, MCP y skills para reducir ambiguedad.</p>
+        </div>
+        <div class="ia-step">
+          <span>3</span>
+          <strong>Ejecutar</strong>
+          <p>Trabaja con agentes, Build/Plan mode y tareas pequenas.</p>
+        </div>
+        <div class="ia-step">
+          <span>4</span>
+          <strong>Verificar</strong>
+          <p>Lee el codigo, ejecuta tests, revisa riesgos y ajusta el bucle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <h3 class="mt-4 text-center" data-bs-toggle="collapse" href="#ia-prompting" style="cursor: pointer;">1. Prompts y seguridad</h3>
+  <section id="ia-prompting" class="collapse">
+    <div class="list-group mb-4">
+      <div class="list-group-item">
+        <strong>Idea clave:</strong> un buen resultado empieza por una instruccion con arquitectura.
+        Si el prompt es ambiguo, el agente rellena huecos inventando decisiones.
+      </div>
+      <div class="list-group-item">
+        <strong>Evita:</strong> pedir "hazme X" sin stack, restricciones, criterios de aceptacion ni
+        formato de salida.
+      </div>
+    </div>
+
+    <h4>Plantilla de prompt perfecto</h4>
+    <pre class="ia-code"><code>[1. Rol]
+Actua como [perfil experto] especializado en [area].
+
+[2. Contexto]
+Estoy construyendo [producto/proyecto] usando [stack/versiones]. El objetivo es [objetivo].
+
+[3. Tarea]
+Necesito que [accion concreta y acotada].
+
+[4. Restricciones]
+- Usa [framework/libreria/patron].
+- Cumple [reglas de seguridad, rendimiento, estilo o arquitectura].
+- Maneja [errores/casos borde].
+- No hagas [limites claros].
+
+[5. Formato]
+Devuelveme [codigo, checklist, tabla, pasos, diff, etc.] con [nivel de detalle].</code></pre>
+
+    <h4>Ejemplo del curso</h4>
+    <pre class="ia-code"><code>[1. Rol]
+Actua como un desarrollador backend Senior especializado en ciberseguridad.
+
+[2. Contexto]
+Estoy construyendo una API REST para un e-commerce usando Python 3.14.
+
+[3. Tarea]
+Necesito que escribas un endpoint para el login de usuarios.
+
+[4. Restricciones]
+El endpoint debe estar hecho con FastAPI. Debe recibir un email y una contrasena,
+validar credenciales simulando una consulta a PostgreSQL y devolver un token JWT.
+Incluye manejo de errores, por ejemplo 401 si fallan las credenciales, y usa
+contrasenas hasheadas con bcrypt.
+
+[5. Formato]
+Devuelveme unicamente el bloque de codigo bien comentado, sin explicaciones previas.</code></pre>
+
+    <h4>Checklist antes de aceptar codigo IA</h4>
+    <ul class="list-group mb-4">
+      <li class="list-group-item">Da contexto y pide seguridad por adelantado.</li>
+      <li class="list-group-item">Lee y entiende el codigo completo antes de aprobarlo.</li>
+      <li class="list-group-item">Pide explicaciones de lo que no entiendas.</li>
+      <li class="list-group-item">Pasa tests, build y revisiones antes de subir cambios.</li>
+      <li class="list-group-item">No pegues claves, datos reales de clientes ni secretos en prompts.</li>
+    </ul>
+  </section>
+
+  <h3 class="mt-4 text-center" data-bs-toggle="collapse" href="#ia-agentes" style="cursor: pointer;">2. Agentes, contexto y herramientas</h3>
+  <section id="ia-agentes" class="collapse">
+    <h4>Build vs. Plan</h4>
+    <div class="list-group mb-4">
+      <div class="list-group-item">
+        <strong>Build Mode:</strong> el agente actua directamente sobre el codigo. Util para tareas
+        atomicas, prototipos o bugs evidentes.
+      </div>
+      <div class="list-group-item">
+        <strong>Plan Mode:</strong> primero propone estrategia y espera revision. Mejor para tareas
+        grandes, refactors y decisiones con riesgo.
+      </div>
+    </div>
+
+    <h4>Comandos utiles en OpenCode</h4>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped table-hover align-middle">
+        <thead style="background-color: #e3f2fd;">
+          <tr>
+            <th>Comando</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>opencode web</code></td><td>Abre una interfaz web local.</td></tr>
+          <tr><td><code>/help</code></td><td>Guia rapida y catalogo de funciones.</td></tr>
+          <tr><td><code>/connect</code></td><td>Selecciona proveedores de IA.</td></tr>
+          <tr><td><code>/models</code></td><td>Selecciona modelos por proveedor.</td></tr>
+          <tr><td><code>/init</code></td><td>Analiza el proyecto y genera <code>AGENTS.md</code>.</td></tr>
+          <tr><td><code>/agents</code> o <code>TAB</code></td><td>Cambia entre Build y Plan.</td></tr>
+          <tr><td><code>/status</code></td><td>Muestra estado de la sesion.</td></tr>
+          <tr><td><code>/new</code></td><td>Abre un nuevo chat.</td></tr>
+          <tr><td><code>/session</code></td><td>Lista sesiones.</td></tr>
+          <tr><td><code>exit</code></td><td>Cierra la sesion actual.</td></tr>
+          <tr><td><code>CTRL + P</code></td><td>Muestra comandos de OpenCode.</td></tr>
+          <tr><td><code>CTRL + T</code></td><td>Cambia el nivel de esfuerzo del modelo.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>AGENTS.md</h4>
+    <p>Archivo de reglas persistentes del proyecto. Debe ser claro, corto y accionable; el curso recomienda no superar unas 500 lineas.</p>
+    <pre class="ia-code"><code># [Nombre del proyecto]
+[Una o dos frases: que es el proyecto y para quien.]
+
+## Stack
+- Lenguaje: [p. ej. TypeScript estricto]
+- Framework / runtime: [p. ej. Node 22 + Express 5]
+- Base de datos: [p. ej. PostgreSQL con Prisma]
+- Tests: [p. ej. Vitest]
+
+## Comandos
+- `[comando dev]` - arranca el servidor en local
+- `[comando test]` - ejecuta los tests antes de cada commit
+- `[comando lint]` - revisa el estilo antes de cada PR
+- `[comando build]` - compila para produccion
+
+## Estructura del proyecto
+- `[carpeta]/` - [que contiene]
+- `[carpeta]/` - [que contiene]
+
+## Convenciones
+- [Estilo de nombres.]
+- [Donde van los tests.]
+- [Manejo de errores.]
+- [Patron obligatorio, p. ej. validar toda entrada de usuario.]
+
+## No hagas
+- [No instalar dependencias sin avisar.]
+- [No tocar zonas congeladas.]
+- [No subir archivos .env* al repositorio.]
+- [No usar `any` sin justificarlo.]
+
+## Flujo de trabajo
+- Antes de una tarea no trivial, propon un plan y espera mi OK.
+- Una tarea a la vez.
+- Al terminar, dime que cambiaste para revisarlo.
+- Si no estas seguro al 80%, pregunta. No inventes.
+
+## Documentacion
+- [Referencias a reglas, contexto, documentacion y especificaciones.]</code></pre>
+
+    <h4>MCP, Context7, Skills y comandos</h4>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped table-hover align-middle">
+        <thead style="background-color: #e3f2fd;">
+          <tr>
+            <th>Elemento</th>
+            <th>Para que sirve</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>MCP</td>
+            <td>Conecta asistentes de IA con herramientas, servicios y fuentes externas sin inventar integraciones a medida.</td>
+          </tr>
+          <tr>
+            <td>Context7</td>
+            <td>Aporta documentacion actualizada de librerias y frameworks para evitar APIs obsoletas o inventadas.</td>
+          </tr>
+          <tr>
+            <td>Skills</td>
+            <td>Instrucciones, scripts y recursos especializados que el agente carga cuando una tarea lo requiere.</td>
+          </tr>
+          <tr>
+            <td>Comandos personalizados</td>
+            <td>Acciones repetitivas invocadas manualmente con <code>/nombre</code>, normalmente guardadas como Markdown.</td>
+          </tr>
+          <tr>
+            <td>Memoria</td>
+            <td>Notas y documentos del proyecto para recuperar contexto sin llenar la ventana de tokens.</td>
+          </tr>
+          <tr>
+            <td><code>/compact</code></td>
+            <td>Resume el historial critico para continuar una sesion con menos tokens y sin perder lo esencial.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Prompt de ejemplo con Context7</h4>
+    <pre class="ia-code"><code>Crear MCP de Context7:
+Crea la configuracion de un MCP para Context7 a nivel de proyecto.
+
+Usar Context7:
+Crea una web que muestre una linea del tiempo desde la aparicion de ChatGPT a la
+actualidad, donde aparezcan predicciones realizadas por CEO y figuras relevantes de
+la tecnologia sobre como los programadores iban a desaparecer y como se equivocaron.
+Utiliza Next.js y context7.</code></pre>
+  </section>
+
+  <h3 class="mt-4 text-center" data-bs-toggle="collapse" href="#ia-sdd" style="cursor: pointer;">3. Especificaciones, multiagentes y verificacion</h3>
+  <section id="ia-sdd" class="collapse">
+    <h4>Spec-Driven Development (SDD)</h4>
+    <div class="list-group mb-4">
+      <div class="list-group-item">
+        <strong>Definicion:</strong> estrategia para reducir el indeterminismo de la IA usando una
+        especificacion tecnica como contrato y memoria persistente.
+      </div>
+      <div class="list-group-item">
+        <strong>Objetivo:</strong> pasar de "hazme X" a "implementa esta spec". Reduce perdida de
+        contexto, cambios invisibles, ambiguedad, prueba/error y deuda cognitiva.
+      </div>
+      <div class="list-group-item">
+        <strong>Nivel recomendado para empezar:</strong> spec-anchored. La spec se mantiene viva y se
+        actualiza antes de cambios importantes.
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped table-hover align-middle">
+        <thead style="background-color: #e3f2fd;">
+          <tr>
+            <th>Paso</th>
+            <th>Funcion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1. Constitucion</td><td>Reglas generales del proyecto, una vez por proyecto.</td></tr>
+          <tr><td>2. Specify</td><td>Que se va a construir y criterios de aceptacion.</td></tr>
+          <tr><td>3. Plan</td><td>Como se va a construir: enfoque tecnico, archivos y datos.</td></tr>
+          <tr><td>4. Tasks</td><td>Dividir el plan en tareas pequenas y verificables.</td></tr>
+          <tr><td>5. Implement</td><td>El agente ejecuta las tareas una a una.</td></tr>
+          <tr><td>6. Verify</td><td>Validar contra criterios de aceptacion y ajustar si falla.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Artefactos SDD</h4>
+    <pre class="ia-code"><code>mi-proyecto/
+|-- spec/
+|   |-- constitution/
+|   |   |-- mission.md       # que construimos y para quien
+|   |   |-- tech-stack.md    # tecnologias y convenciones
+|   |   `-- roadmap.md       # orden de features
+|   `-- features/
+|       |-- 001-tarea/
+|       |   |-- spec.md      # que hace y criterios de aceptacion
+|       |   |-- plan.md      # como se implementa
+|       |   `-- tasks.md     # checklist de tareas
+|       `-- 002-tarea/
+`-- codigo/                  # codigo generado por el agente</code></pre>
+
+    <h4>Niveles SDD</h4>
+    <ul class="list-group mb-4">
+      <li class="list-group-item"><strong>Spec-first:</strong> escribes spec, generas codigo una vez y despues editas codigo directamente.</li>
+      <li class="list-group-item"><strong>Spec-anchored:</strong> la spec se mantiene viva. Cada cambio importante actualiza antes la spec.</li>
+      <li class="list-group-item"><strong>Spec-as-source:</strong> solo editas la spec y regeneras codigo desde ella. Experimental.</li>
+    </ul>
+
+    <h4>Multiagentes y loops</h4>
+    <div class="list-group mb-4">
+      <div class="list-group-item">
+        <strong>Subagente:</strong> agente hijo con su propia ventana de contexto, rol y permisos.
+        Hace una tarea concreta y devuelve solo el resumen util.
+      </div>
+      <div class="list-group-item">
+        <strong>Flujo:</strong> coordinador divide y asigna, implementador ejecuta, verificador prueba
+        y revisa.
+      </div>
+      <div class="list-group-item">
+        <strong>Loop engineering:</strong> ciclo actuar &rarr; observar &rarr; corregir hasta cumplir un
+        criterio. Ejemplo: arreglar tests hasta que todo pase.
+      </div>
+    </div>
+  </section>
+
+  <h3 class="mt-4 text-center" data-bs-toggle="collapse" href="#ia-recursos" style="cursor: pointer;">4. Enlaces comentados</h3>
+  <section id="ia-recursos" class="collapse">
+
+    <h4>Comparar modelos y elegir herramienta</h4>
+    <ul class="list-group ia-resource-list mb-4">
       <li class="list-group-item">
-        <a href="https://chat.openai.com/?model=text-davinci-002-render-sha" class="nav-link" target="_blank">ChatGPT</a>
-        <a href="https://platform.openai.com/" class="nav-link">Help ChatGPT</a>
+        <a href="https://llm-stats.com/benchmarks/swe-bench-verified" target="_blank" rel="noopener noreferrer">SWE-Bench Verified</a>
+        <span>Ranking de modelos resolviendo issues reales de GitHub. Util para comparar capacidad de programacion.</span>
       </li>
       <li class="list-group-item">
-        <a href="https://gemini.google.com/app" class="nav-link" target="_blank">Gemini</a>
+        <a href="https://llm-stats.com/" target="_blank" rel="noopener noreferrer">LLM Stats</a>
+        <span>Comparador de modelos con rankings, benchmarks, costes, contexto y velocidad.</span>
       </li>
       <li class="list-group-item">
-        <a href="https://platform.openai.com/playground/chat" class="nav-link" target="_blank">Playground</a>
+        <a href="https://artificialanalysis.ai/models" target="_blank" rel="noopener noreferrer">Artificial Analysis - modelos</a>
+        <span>Tabla para comparar inteligencia, precio, velocidad, contexto y proveedores de modelos IA.</span>
       </li>
       <li class="list-group-item">
-        <span class="text-info-emphasis">ChatHub - Cliente de chatbot todo en uno - Extension de Chrome que te permite realizar la misma pregunta a varios Chatbot IA</span>
+        <a href="https://artificialanalysis.ai/leaderboards/models" target="_blank" rel="noopener noreferrer">Artificial Analysis - leaderboards</a>
+        <span>Rankings actualizados para ver que modelos destacan en calidad, coste y rendimiento.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://openrouter.ai/rankings" target="_blank" rel="noopener noreferrer">OpenRouter rankings</a>
+        <span>Ranking de modelos disponibles en OpenRouter, util si vas a consumir varios proveedores desde una API.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://platform.openai.com/tokenizer" target="_blank" rel="noopener noreferrer">OpenAI Tokenizer</a>
+        <span>Herramienta para estimar cuantos tokens consume un texto antes de enviarlo a un modelo.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://developers.openai.com/api/docs/pricing" target="_blank" rel="noopener noreferrer">OpenAI API pricing</a>
+        <span>Pagina de precios de la API de OpenAI por modelo, entrada, salida y uso cacheado.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://artificialanalysis.ai/models#context-window" target="_blank" rel="noopener noreferrer">Ventana de contexto</a>
+        <span>Comparativa centrada en cuanto texto puede manejar cada modelo en una conversacion.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://artificialanalysis.ai/models#intelligence" target="_blank" rel="noopener noreferrer">Inteligencia de modelos</a>
+        <span>Vista para comparar calidad y capacidad de razonamiento entre modelos.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://artificialanalysis.ai/models#model-size-tabs" target="_blank" rel="noopener noreferrer">Tamanos de modelo</a>
+        <span>Referencia para entender parametros y familias de modelos.</span>
       </li>
     </ul>
 
-    <!-- Generative Art -->
-     <h3 class="mt-3 text-center" data-bs-toggle="collapse" href="#generativeArt" style="cursor: pointer;">Generative Art</h3>
-     <ul id="generativeArt" class="list-group collapse">
+    <h4>Modelos locales, chat y playgrounds</h4>
+    <ul class="list-group ia-resource-list mb-4">
       <li class="list-group-item">
-        <a href="https://www.midjourney.com/home?callbackUrl=%2Fapp%2F" class="nav-link">Midjourney</a>
+        <a href="https://lmstudio.ai/models" target="_blank" rel="noopener noreferrer">LM Studio Models</a>
+        <span>Catalogo de modelos para descargar y ejecutar localmente desde LM Studio.</span>
       </li>
       <li class="list-group-item">
-        <a href="https://www.bluewillow.ai/" class="nav-link">BlueWillow</a>
+        <a href="https://ollama.com/search" target="_blank" rel="noopener noreferrer">Ollama Search</a>
+        <span>Biblioteca de modelos para usar en local con Ollama mediante comandos simples.</span>
       </li>
       <li class="list-group-item">
-        <a href="https://leonardo.ai/" class="nav-link">Leonardo</a>
+        <a href="https://platform.openai.com/chat" target="_blank" rel="noopener noreferrer">OpenAI Chat</a>
+        <span>Interfaz de chat de la plataforma OpenAI para probar modelos y prompts.</span>
       </li>
       <li class="list-group-item">
-        <a href="https://labs.openai.com/" class="nav-link">DALL·E 2</a>
+        <a href="https://aistudio.google.com" target="_blank" rel="noopener noreferrer">Google AI Studio</a>
+        <span>Entorno de Google para probar Gemini, crear prompts y prototipar llamadas a modelos.</span>
       </li>
       <li class="list-group-item">
-        <a href="https://www.upscale.media/es" class="nav-link">UpscaleMedia - Mejorar calidad de Imagen</a>
+        <a href="https://chat.openai.com/?model=text-davinci-002-render-sha" target="_blank" rel="noopener noreferrer">ChatGPT</a>
+        <span>Chat general de OpenAI para conversar, analizar, resumir y trabajar con archivos o codigo.</span>
       </li>
       <li class="list-group-item">
-        <a href="https://www.adobe.com/es/products/firefly.html" class="nav-link">Adobe Firefly</a>
+        <a href="https://platform.openai.com/" target="_blank" rel="noopener noreferrer">OpenAI Platform</a>
+        <span>Panel de OpenAI para API keys, documentacion, modelos, uso y herramientas de desarrollo.</span>
       </li>
       <li class="list-group-item">
-        <a href="https://letsenhance.io/" class="nav-link">Letsenhance - Mejora la calidad de las imagenes</a>
+        <a href="https://gemini.google.com/app" target="_blank" rel="noopener noreferrer">Gemini</a>
+        <span>Chat de Google con Gemini para tareas generales, investigacion y generacion multimodal.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://platform.openai.com/playground/chat" target="_blank" rel="noopener noreferrer">OpenAI Playground</a>
+        <span>Laboratorio para probar prompts, parametros y respuestas antes de llevarlos a una app.</span>
+      </li>
+      <li class="list-group-item">
+        <strong>ChatHub</strong>
+        <span>Extension de Chrome para enviar la misma pregunta a varios chatbots y comparar respuestas.</span>
       </li>
     </ul>
+
+    <h4>Editores y agentes de codigo</h4>
+    <ul class="list-group ia-resource-list mb-4">
+      <li class="list-group-item">
+        <a href="https://chatgpt.com/codex" target="_blank" rel="noopener noreferrer">Codex</a>
+        <span>Agente de OpenAI para trabajo y codigo: puede ayudar con tareas, proyectos, archivos y cambios revisables.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://code.claude.com" target="_blank" rel="noopener noreferrer">Claude Code</a>
+        <span>Agente de Anthropic para leer repositorios, editar archivos y ejecutar comandos desde terminal o IDE.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://opencode.ai" target="_blank" rel="noopener noreferrer">OpenCode</a>
+        <span>Agente de codigo open-source para trabajar desde terminal, escritorio o IDE.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://cursor.com/" target="_blank" rel="noopener noreferrer">Cursor</a>
+        <span>Editor de codigo con IA integrada, agentes y edicion multiarchivo sobre tu proyecto.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visual Studio Code</a>
+        <span>Editor base muy extensible, con ecosistema de extensiones y asistentes de IA como Copilot.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://antigravity.google/" target="_blank" rel="noopener noreferrer">Google Antigravity</a>
+        <span>IDE agent-first de Google para delegar tareas a agentes con acceso a editor, terminal y navegador.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://www.trae.ai/" target="_blank" rel="noopener noreferrer">TRAE</a>
+        <span>Editor/IDE con IA orientado a colaborar con agentes durante el desarrollo.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://zed.dev/" target="_blank" rel="noopener noreferrer">Zed</a>
+        <span>Editor rapido y colaborativo con soporte de IA y enfoque en rendimiento.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://www.warp.dev/" target="_blank" rel="noopener noreferrer">Warp</a>
+        <span>Terminal moderna y entorno agentico para ejecutar, orquestar y revisar tareas de desarrollo.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://neovim.io/" target="_blank" rel="noopener noreferrer">Neovim</a>
+        <span>Editor modal extensible para terminal, ideal si quieres un flujo ligero y altamente configurable.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://kiro.dev/" target="_blank" rel="noopener noreferrer">Kiro</a>
+        <span>IDE de desarrollo agentico orientado a specs, planificacion y trabajo estructurado con IA.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://replit.com/" target="_blank" rel="noopener noreferrer">Replit</a>
+        <span>Plataforma en navegador para construir, ejecutar y desplegar apps con ayuda de IA.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://lovable.dev/" target="_blank" rel="noopener noreferrer">Lovable</a>
+        <span>Constructor de apps y webs con IA a partir de prompts, util para prototipos rapidos.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://www.jetbrains.com/es-es/idea/" target="_blank" rel="noopener noreferrer">IntelliJ IDEA</a>
+        <span>IDE profesional para Java y Kotlin, con herramientas avanzadas de refactor y asistencia.</span>
+      </li>
+    </ul>
+
+    <h4>OpenCode, MCP, skills y SDD</h4>
+    <ul class="list-group ia-resource-list mb-4">
+      <li class="list-group-item">
+        <a href="https://opencode.ai/es/download" target="_blank" rel="noopener noreferrer">Descarga OpenCode</a>
+        <span>Pagina para instalar OpenCode en tu sistema.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener noreferrer">Repositorio OpenCode</a>
+        <span>Codigo fuente, issues y actividad del proyecto OpenCode.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://opencode.ai/docs" target="_blank" rel="noopener noreferrer">Documentacion OpenCode</a>
+        <span>Guia oficial de instalacion, configuracion, uso, agentes, modelos y permisos.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://opencode.ai/docs/mcp-servers/" target="_blank" rel="noopener noreferrer">MCP en OpenCode</a>
+        <span>Como configurar servidores MCP locales o remotos para dar herramientas extra al agente.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://opencode.ai/docs/skills/" target="_blank" rel="noopener noreferrer">Skills en OpenCode</a>
+        <span>Como crear y usar habilidades especializadas para que el agente siga reglas concretas.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://opencode.ai/docs/commands/" target="_blank" rel="noopener noreferrer">Commands en OpenCode</a>
+        <span>Como crear comandos reutilizables para acciones repetitivas del flujo de trabajo.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer">Model Context Protocol</a>
+        <span>Documentacion del estandar MCP para conectar modelos con datos, herramientas y servicios.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://mcp.directory/" target="_blank" rel="noopener noreferrer">MCP Directory</a>
+        <span>Directorio para descubrir servidores MCP y skills ya existentes.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://mcpservers.org/" target="_blank" rel="noopener noreferrer">MCP Servers</a>
+        <span>Listado comunitario de servidores MCP, util para encontrar integraciones concretas.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://context7.com/" target="_blank" rel="noopener noreferrer">Context7</a>
+        <span>Servidor MCP que aporta documentacion actualizada a asistentes de codigo.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://context7.com/dashboard" target="_blank" rel="noopener noreferrer">Context7 Dashboard</a>
+        <span>Panel para crear o gestionar la API key de Context7.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://context7.com/docs/resources/all-clients#opencode" target="_blank" rel="noopener noreferrer">Context7 para OpenCode</a>
+        <span>Instrucciones para conectar Context7 con OpenCode.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://github.com/anthropics/skills" target="_blank" rel="noopener noreferrer">Anthropic Skills</a>
+        <span>Repositorio con ejemplos, plantillas y patrones para crear skills de agentes.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="http://skills.sh" target="_blank" rel="noopener noreferrer">skills.sh</a>
+        <span>Directorio de skills para descubrir habilidades listas para usar o tomar como referencia.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://agents.md" target="_blank" rel="noopener noreferrer">agents.md</a>
+        <span>Referencia del archivo AGENTS.md para documentar reglas e instrucciones persistentes de un repo.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://thebigschool.com/wp-content/uploads/2026/06/spec_template.zip" target="_blank" rel="noopener noreferrer">Plantilla SDD</a>
+        <span>Zip con estructura base para documentar proyectos con desarrollo dirigido por especificacion.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer">Master Desarrollo con IA</a>
+        <span>Pagina del programa formativo de BIG school sobre desarrollo con IA y agentes.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://www.youtube.com/live/irR8437xihg" target="_blank" rel="noopener noreferrer">Directo dia 2</a>
+        <span>Grabacion del segundo directo del curso.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://www.youtube.com/live/kcSKbwVYXCg" target="_blank" rel="noopener noreferrer">Directo dia 3</a>
+        <span>Grabacion del tercer directo del curso.</span>
+      </li>
+    </ul>
+
+    <h4>Directorios, documentos y presentaciones</h4>
+    <ul class="list-group ia-resource-list mb-4">
+      <li class="list-group-item">
+        <a href="https://www.toolify.ai/" target="_blank" rel="noopener noreferrer">Toolify</a>
+        <span>Directorio amplio para buscar herramientas IA por categoria, tendencia o caso de uso.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://www.futuretools.io/" target="_blank" rel="noopener noreferrer">FutureTools</a>
+        <span>Base de datos curada de herramientas IA con filtros por categoria y utilidad.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://tome.app/" target="_blank" rel="noopener noreferrer">Tome</a>
+        <span>Herramienta para crear presentaciones, narrativas y materiales visuales con ayuda de IA.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://askyourpdf.com/es" target="_blank" rel="noopener noreferrer">AskYourPDF</a>
+        <span>Subes documentos PDF y puedes resumirlos, hacer preguntas o extraer informacion clave.</span>
+      </li>
+    </ul>
+
+    <h4>Imagen, video y arte generativo</h4>
+    <ul class="list-group ia-resource-list">
+      <li class="list-group-item">
+        <a href="https://www.midjourney.com/home?callbackUrl=%2Fapp%2F" target="_blank" rel="noopener noreferrer">Midjourney</a>
+        <span>Generacion de imagenes artisticas y conceptuales a partir de prompts.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://www.bluewillow.ai/" target="_blank" rel="noopener noreferrer">BlueWillow</a>
+        <span>Generador de arte e imagenes con IA, orientado a crear ilustraciones desde texto.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://leonardo.ai/" target="_blank" rel="noopener noreferrer">Leonardo</a>
+        <span>Plataforma generativa para imagenes, arte, assets visuales y video.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://labs.openai.com/" target="_blank" rel="noopener noreferrer">DALL-E 2</a>
+        <span>Acceso historico a generacion de imagenes de OpenAI; puede redirigir o requerir cuenta.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://www.upscale.media/es" target="_blank" rel="noopener noreferrer">UpscaleMedia</a>
+        <span>Mejora y escala imagenes con IA para aumentar resolucion y nitidez.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://www.adobe.com/es/products/firefly.html" target="_blank" rel="noopener noreferrer">Adobe Firefly</a>
+        <span>Suite de Adobe para generar y editar imagenes, video, audio y diseno con IA generativa.</span>
+      </li>
+      <li class="list-group-item">
+        <a href="https://letsenhance.io/" target="_blank" rel="noopener noreferrer">LetsEnhance</a>
+        <span>Herramienta online para mejorar calidad, nitidez y tamano de imagenes con IA.</span>
+      </li>
+    </ul>
+  </section>
 
 </div>
