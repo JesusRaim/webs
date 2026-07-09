@@ -1,39 +1,38 @@
-# My Websites
+# Mis Webs
 
-Personal web application for storing and accessing information from any device (websites, software, commands, etc.).
+Aplicacion web personal para almacenar, buscar y consultar recursos desde cualquier dispositivo: enlaces, comandos, software, guias, documentacion, snippets y fichas de hardware.
 
 ## Stack
 
-* HTML, CSS, and JavaScript.
-* Bootstrap 5.3.3.
-* No database or external dependencies.
+* HTML, CSS y JavaScript nativo.
+* Modulos ES (`type="module"`).
+* Sin framework frontend, sin build, sin base de datos y sin dependencias externas de runtime.
+* Docker Compose opcional para servir los archivos estaticos con Nginx.
 
-## Project Structure
+## Estructura
 
-* `index.html`: entry point and navigation.
-* `js/`: modules (`fileFunctions.js`, `modalFunctions.js`, `templatesFunctions.js`, `structureFunctions.js`).
-* `css/`: styles (`custom.css`, `structure.css`).
-* `templates/`: HTML templates by section (AI, Developer, PC, Games, etc.).
-* `structure/`: shared components (`modals.html`).
-* `bootstrap-5.3.3-dist/`: Bootstrap.
-* `docker-compose.yml`: deployment.
+* `index.html`: punto de entrada de la SPA.
+* `src/data/catalog.js`: categorias y catalogo central de recursos.
+* `src/scripts/`: modulos de aplicacion (`app.js`, `detail.js`, `render.js`, `search.js`, `utils.js`).
+* `src/styles/main.css`: estilos globales, layout, componentes y compatibilidad con contenido migrado.
+* `src/content/`: paginas largas reutilizadas como articulos, guias, manuales y fichas de producto.
+* `assets/images/`: imagenes locales usadas por fichas y manuales.
+* `docs/`: documentacion del proyecto.
+* `docker-compose.yml`: despliegue local opcional.
 
-## Conventions
+## Convenciones
 
-* Keep the project structure organized.
-* Each feature should be placed in its corresponding file and folder.
-* Reuse existing code whenever possible; avoid duplicating logic.
-* Maintain the project's coding style and modify only what is necessary.
-* Comment functions or non-obvious logic.
+* Mantener la aplicacion estatica y facil de publicar desde Git.
+* Colocar nuevos recursos en `src/data/catalog.js`.
+* Colocar contenido largo en `src/content/` y referenciarlo desde el catalogo con `contentPath`.
+* Usar nombres descriptivos y modulos con responsabilidad clara.
+* Evitar dependencias externas salvo aprobacion explicita.
+* Comentar solo la logica no evidente.
 
-## Constraints
+## Flujo de trabajo
 
-* Do not install dependencies or change the technology stack without consulting me first.
-
-## Workflow
-
-1. Analyze the project before making any changes.
-2. For non-trivial tasks, propose a plan and wait for my approval.
-3. Complete one task at a time.
-4. After finishing, provide a summary of the changes made.
-5. If you are less than 80% confident, ask instead of making assumptions.
+1. Analiza el proyecto antes de realizar cambios.
+2. Para tareas no triviales, propon un plan y espera aprobacion.
+3. Realiza una tarea cada vez.
+4. Al finalizar, resume los cambios realizados y las comprobaciones ejecutadas.
+5. Si tienes menos del 80% de certeza, pregunta en lugar de asumir.
