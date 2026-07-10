@@ -76,13 +76,6 @@ export const categories = [
     description: "Tiendas de claves, juegos, bundles y compras puntuales.",
     accent: "#db2777",
   },
-  {
-    id: "other",
-    label: "Otros",
-    shortLabel: "Otr",
-    description: "Recursos que todavia no encajan mejor en otra categoria.",
-    accent: "#64748b",
-  },
 ];
 
 export const resources = [
@@ -1907,34 +1900,5 @@ Caja: Be Quiet PURE BASE 500DX USB 3.0 Cristal Templado Negra</code></pre>`,
     type: "link",
     url: "https://web.tulotero.es/",
     tags: ["loteria"],
-  },
-  {
-    id: "other-playdede",
-    title: "Playdede",
-    description: "Recurso guardado en la antigua seccion Other.",
-    category: "other",
-    group: "Pendiente de clasificar",
-    type: "link",
-    url: "https://privacidad.me/@playdede/",
-    tags: ["other"],
-  },
-  {
-    id: "backlog-notes",
-    title: "Notas pendientes del proyecto",
-    description: "Ideas conservadas desde tareas.txt: logo, aspecto de enlaces, manuales, R36S, Drive y diagnostico de memoria.",
-    category: "other",
-    group: "Backlog",
-    type: "note",
-    tags: ["backlog", "pendiente"],
-    detailsHtml: `<ul>
-      <li>Poner mi logo.</li>
-      <li>Cambiar el aspecto de los enlaces.</li>
-      <li>Ver que hacer con los manuales de los software.</li>
-      <li>Seccion Other por Movie.</li>
-      <li>DPI del raton: 400, 800, 1600, 3200.</li>
-      <li>Anadir software nuevo sobre la R36S.</li>
-      <li>Arreglar informacion de componentes subida a Drive.</li>
-      <li>Diagnostico de memoria de Windows: resultados en Visor de eventos > Informacion > MemoryDiagnostics-Result.</li>
-    </ul>`,
   },
 ];
