@@ -38,13 +38,13 @@ export function sortByTitle(items) {
 
 export function typeLabel(type) {
   const labels = {
-    article: "Articulo",
-    command: "Comando",
-    link: "Enlace",
-    note: "Nota",
-    product: "Producto",
-    snippet: "Snippet",
-    tool: "Herramienta",
+    [RESOURCE_TYPE.ARTICLE]: "Articulo",
+    [RESOURCE_TYPE.COMMAND]: "Comando",
+    [RESOURCE_TYPE.LINK]: "Enlace",
+    [RESOURCE_TYPE.NOTE]: "Nota",
+    [RESOURCE_TYPE.PRODUCT]: "Producto",
+    [RESOURCE_TYPE.SNIPPET]: "Snippet",
+    [RESOURCE_TYPE.TOOL]: "Herramienta",
   };
 
   return labels[type] ?? "Recurso";
@@ -53,3 +53,4 @@ export function typeLabel(type) {
 export function unique(values) {
   return [...new Set(values.filter(Boolean))];
 }
+import { RESOURCE_TYPE } from "../data/constants.js";

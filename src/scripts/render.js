@@ -1,4 +1,5 @@
 import { categories, resources } from "../data/catalog.js";
+import { CATEGORY_ID } from "../data/constants.js";
 import { escapeHtml, groupBy, sortByTitle, typeLabel, unique } from "./utils.js";
 
 export function renderNavigation(state) {
@@ -9,7 +10,7 @@ export function renderNavigation(state) {
 
   return categories
     .map((category) => {
-      const count = category.id === "dashboard" ? resources.length : counts[category.id] ?? 0;
+      const count = category.id === CATEGORY_ID.DASHBOARD ? resources.length : counts[category.id] ?? 0;
       const active = state.category === category.id ? "is-active" : "";
 
       return `<button class="nav-item ${active}" type="button" data-category="${category.id}" style="--category-accent: ${category.accent}">
@@ -63,7 +64,7 @@ export function renderStats() {
 export function renderDashboard() {
   const pinned = resources.filter((resource) => resource.pinned);
   const categoryCards = categories
-    .filter((category) => category.id !== "dashboard")
+    .filter((category) => category.id !== CATEGORY_ID.DASHBOARD)
     .map((category) => {
       const count = resources.filter((resource) => resource.category === category.id).length;
       return `<button class="category-tile" type="button" data-category="${category.id}" style="--category-accent: ${category.accent}">
@@ -92,7 +93,7 @@ export function renderDashboard() {
 }
 
 export function renderResults(state, visibleResources) {
-  if (state.category === "dashboard" && state.query.trim() === "" && state.type === "all") {
+  if (state.category === CATEGORY_ID.DASHBOARD && state.query.trim() === "" && state.type === "all") {
     return renderDashboard();
   }
 

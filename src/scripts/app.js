@@ -1,10 +1,11 @@
 import { categories, resources } from "../data/catalog.js";
+import { CATEGORY_ID } from "../data/constants.js";
 import { createDetailController } from "./detail.js";
 import { filterResources, warmContentIndex } from "./search.js";
 import { renderNavigation, renderResults, renderTypeOptions } from "./render.js";
 
 const state = {
-  category: "dashboard",
+  category: CATEGORY_ID.DASHBOARD,
   query: "",
   type: "all",
 };
@@ -116,13 +117,13 @@ function render() {
 
 function readRoute() {
   const route = location.hash.replace(/^#\/?/, "");
-  const category = route || "dashboard";
+  const category = route || CATEGORY_ID.DASHBOARD;
 
-  state.category = categories.some((item) => item.id === category) ? category : "dashboard";
+  state.category = categories.some((item) => item.id === category) ? category : CATEGORY_ID.DASHBOARD;
 }
 
 function updateRoute(category) {
-  const target = category === "dashboard" ? "#/" : `#/${category}`;
+  const target = category === CATEGORY_ID.DASHBOARD ? "#/" : `#/${category}`;
   if (location.hash !== target) {
     history.pushState(null, "", target);
   }

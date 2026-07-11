@@ -1,0 +1,81 @@
+import { CATEGORY_ID } from "./constants.js";
+
+export const categories = [
+  {
+    id: CATEGORY_ID.DASHBOARD,
+    label: "Inicio",
+    shortLabel: "In",
+    description: "Vista general de todos los recursos guardados.",
+    accent: "#2563eb",
+  },
+  {
+    id: CATEGORY_ID.AI,
+    label: "IA",
+    shortLabel: "IA",
+    description: "Modelos, agentes, prompts, SDD, MCP y herramientas de inteligencia artificial.",
+    accent: "#2563eb",
+  },
+  {
+    id: CATEGORY_ID.DEVELOPER,
+    label: "Developer",
+    shortLabel: "Dev",
+    description: "Documentacion, testing, JavaScript, Spring Boot, Maven y utilidades de desarrollo.",
+    accent: "#0f766e",
+  },
+  {
+    id: CATEGORY_ID.PC,
+    label: "PC",
+    shortLabel: "PC",
+    description: "Componentes del equipo, fichas tecnicas e informacion de hardware propio.",
+    accent: "#7c3aed",
+  },
+  {
+    id: CATEGORY_ID.SOFTWARE,
+    label: "Software",
+    shortLabel: "Soft",
+    description: "Programas, utilidades, particiones, imagenes, PDF, CV y herramientas de sistema.",
+    accent: "#0891b2",
+  },
+  {
+    id: CATEGORY_ID.WINDOWS,
+    label: "Windows",
+    shortLabel: "Win",
+    description: "Comandos y procedimientos rapidos para diagnostico y mantenimiento.",
+    accent: "#1d4ed8",
+  },
+  {
+    id: CATEGORY_ID.GAMING,
+    label: "Gaming",
+    shortLabel: "Game",
+    description: "Juegos, emuladores, guias, ajustes de rendimiento y tiendas.",
+    accent: "#16a34a",
+  },
+  {
+    id: CATEGORY_ID.HARDWARE,
+    label: "Hardware",
+    shortLabel: "HW",
+    description: "Pruebas, temperaturas, diagnostico y comparadores de componentes.",
+    accent: "#ea580c",
+  },
+  {
+    id: CATEGORY_ID.TEXT,
+    label: "Texto y Docs",
+    shortLabel: "Txt",
+    description: "Traductores, correctores, conversores, diagramas y herramientas documentales.",
+    accent: "#9333ea",
+  },
+  {
+    id: CATEGORY_ID.LEARNING,
+    label: "Cursos",
+    shortLabel: "Edu",
+    description: "Plataformas de aprendizaje e idiomas.",
+    accent: "#ca8a04",
+  },
+  {
+    id: CATEGORY_ID.SHOPPING,
+    label: "Compras",
+    shortLabel: "Shop",
+    description: "Tiendas de claves, juegos, bundles y compras puntuales.",
+    accent: "#db2777",
+  },
+];

@@ -1,0 +1,77 @@
+import { CATEGORY_ID, RESOURCE_TYPE } from "../constants.js";
+import { defineCategoryResources } from "./define-category-resources.js";
+
+export const windowsResources = defineCategoryResources(CATEGORY_ID.WINDOWS, [
+{
+    id: "win-ram-check",
+    title: "Comprobar el estado de la RAM",
+    description: "Ejecutar diagnostico de memoria de Windows.",
+    group: "Diagnostico",
+    type: RESOURCE_TYPE.COMMAND,
+    tags: ["ram", "diagnostico", "windows"],
+    commands: ["Windows + R", "mdsched.exe"],
+  },
+{
+    id: "win-disk-check",
+    title: "Comprobar discos duros",
+    description: "Usar chkdsk para revisar discos y reparar errores.",
+    group: "Diagnostico",
+    type: RESOURCE_TYPE.COMMAND,
+    tags: ["discos", "chkdsk"],
+    commands: ["cmd - chkdsk", "cmd - chkdsk c: /f"],
+  },
+{
+    id: "win-malware-removal",
+    title: "Eliminacion de software malintencionado",
+    description: "Abrir la herramienta MRT integrada en Windows.",
+    group: "Seguridad",
+    type: RESOURCE_TYPE.COMMAND,
+    tags: ["seguridad", "mrt", "malware"],
+    commands: ["Windows + R", "mrt"],
+  },
+{
+    id: "win-maintenance",
+    title: "Mantenimiento del sistema",
+    description: "Ejecutar el diagnostico de mantenimiento.",
+    group: "Mantenimiento",
+    type: RESOURCE_TYPE.COMMAND,
+    tags: ["mantenimiento", "diagnostico"],
+    commands: ["MSDT -id MaintenanceDiagnostic"],
+  },
+{
+    id: "win-remote-desktop",
+    title: "Conexion a Escritorio remoto",
+    description: "Abrir RDP para conectarse a otro equipo por nombre o IP.",
+    group: "Red",
+    type: RESOURCE_TYPE.COMMAND,
+    tags: ["rdp", "mstsc", "red"],
+    commands: ["Windows + R", "mstsc"],
+  },
+{
+    id: "win-temp-files",
+    title: "Eliminar archivos temporales",
+    description: "Ubicaciones rapidas para limpiar temporales.",
+    group: "Mantenimiento",
+    type: RESOURCE_TYPE.COMMAND,
+    tags: ["temporales", "limpieza"],
+    commands: ["prefetch", "%temp%", "temp"],
+  },
+{
+    id: "win-god-mode",
+    title: "Activar modo dios",
+    description: "Crear carpeta especial con accesos avanzados del Panel de control.",
+    group: "Configuracion",
+    type: RESOURCE_TYPE.COMMAND,
+    tags: ["godmode", "panel-control"],
+    commands: ["GodMode.{ED7BA470-8E54465-825C-99712043E01C}"],
+  },
+{
+    id: "win-bios-shortcut",
+    title: "Iniciar BIOS desde el escritorio",
+    description: "Acceso directo para reiniciar hacia firmware UEFI/BIOS.",
+    group: "Configuracion",
+    type: RESOURCE_TYPE.COMMAND,
+    tags: ["bios", "uefi", "shutdown"],
+    commands: ["Crear acceso directo", "shutdown /r /fw", "Ejecutar en modo Administrador"],
+  }
+]);
