@@ -9,7 +9,6 @@ export const pcResources = defineCategoryResources(CATEGORY_ID.PC, [
     group: "Equipo",
     type: RESOURCE_TYPE.NOTE,
     tags: ["pc", "componentes", "setup"],
-    pinned: true,
     detailsHtml: `<dl class="spec-list">
       <div><dt>Motherboard</dt><dd>ASUS PRIME B560-PLUS</dd></div>
       <div><dt>CPU</dt><dd>Intel Core i5-11600KF 3.9GHz</dd></div>
@@ -32,6 +31,8 @@ export const pcResources = defineCategoryResources(CATEGORY_ID.PC, [
     group: "Equipo",
     type: RESOURCE_TYPE.SNIPPET,
     tags: ["pc", "gaming", "specs"],
+    pinned: true,
+    pinnedOrder: 1,
     detailsHtml: `<pre><code>SO: Windows 11 Pro 64-bit
 Procesador: Intel Core i5-11600KF 3.9GHz
 Memoria: Corsair Vengeance LPX DDR4 3200 PC4-25600 16GB CL16

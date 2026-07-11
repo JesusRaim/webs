@@ -33,6 +33,16 @@ export function validateResourceCatalog(resources) {
       throw new Error(`El id de recurso "${resource.id}" esta duplicado.`);
     }
 
+    if ("pinnedOrder" in resource) {
+      if (!resource.pinned) {
+        throw new Error(`El recurso "${resource.id}" solo puede definir pinnedOrder si esta fijado.`);
+      }
+
+      if (!Number.isInteger(resource.pinnedOrder) || resource.pinnedOrder < 1) {
+        throw new Error(`El orden de fijado del recurso "${resource.id}" debe ser un entero positivo.`);
+      }
+    }
+
     resourceIds.add(resource.id);
   }
 

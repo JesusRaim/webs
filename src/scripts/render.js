@@ -62,7 +62,11 @@ export function renderStats() {
 }
 
 export function renderDashboard() {
-  const pinned = resources.filter((resource) => resource.pinned);
+  const pinned = resources
+    .map((resource, index) => ({ resource, index }))
+    .filter(({ resource }) => resource.pinned)
+    .sort((a, b) => (a.resource.pinnedOrder ?? Infinity) - (b.resource.pinnedOrder ?? Infinity) || a.index - b.index)
+    .map(({ resource }) => resource);
   const categoryCards = categories
     .filter((category) => category.id !== CATEGORY_ID.DASHBOARD)
     .map((category) => {
