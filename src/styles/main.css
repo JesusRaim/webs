@@ -178,6 +178,11 @@ button {
   font-size: 0.82rem;
 }
 
+.category-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
 .nav-text {
   min-width: 0;
   display: flex;

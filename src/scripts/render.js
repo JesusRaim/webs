@@ -1,5 +1,6 @@
 import { categories, resources } from "../data/catalog.js";
 import { CATEGORY_ID } from "../data/constants.js";
+import { renderCategoryIcon } from "./icons.js";
 import { escapeHtml, groupBy, sortByTitle, typeLabel, unique } from "./utils.js";
 
 export function renderNavigation(state) {
@@ -14,7 +15,7 @@ export function renderNavigation(state) {
       const active = state.category === category.id ? "is-active" : "";
 
       return `<button class="nav-item ${active}" type="button" data-category="${category.id}" style="--category-accent: ${category.accent}">
-        <span class="nav-mark">${escapeHtml(category.shortLabel)}</span>
+        <span class="nav-mark">${renderCategoryIcon(category.icon)}</span>
         <span class="nav-text">
           <strong>${escapeHtml(category.label)}</strong>
           <small>${count}</small>
@@ -72,7 +73,7 @@ export function renderDashboard() {
     .map((category) => {
       const count = resources.filter((resource) => resource.category === category.id).length;
       return `<button class="category-tile" type="button" data-category="${category.id}" style="--category-accent: ${category.accent}">
-        <span>${escapeHtml(category.shortLabel)}</span>
+        <span>${renderCategoryIcon(category.icon)}</span>
         <strong>${escapeHtml(category.label)}</strong>
         <small>${count} recursos</small>
       </button>`;
