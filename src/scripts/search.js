@@ -43,7 +43,7 @@ export function filterResources(resources, state) {
   const query = normalizeText(state.query);
 
   return resources.filter((resource) => {
-    const matchesCategory = state.category === "dashboard" || resource.category === state.category;
+    const matchesCategory = state.category === CATEGORY_ID.DASHBOARD || resource.category === state.category;
     const matchesType = state.type === "all" || resource.type === state.type;
     const matchesQuery = query.length === 0 || searchableText(resource).includes(query);
 
@@ -68,3 +68,4 @@ export function searchableText(resource) {
 
   return normalizeText(chunks.filter(Boolean).join(" "));
 }
+import { CATEGORY_ID } from "../data/constants.js";
