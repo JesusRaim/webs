@@ -25,6 +25,60 @@ export const pcResources = defineCategoryResources(CATEGORY_ID.PC, [
     </dl>`,
   },
 {
+    id: "pc-mobile-google-pixel-7a",
+    title: "Google Pixel 7a 5G 8GB 128GB",
+    description: "Móvil actual con Google Tensor G2, pantalla OLED de 6.1 pulgadas y cámara principal de 64 MP.",
+    group: "Móvil",
+    type: RESOURCE_TYPE.PRODUCT,
+    url: "https://www.pccomponentes.com/google-pixel-7a-5g-8gb-128gb-61-carbon",
+    image: "assets/images/pc/Google_Pixel_7a_5G_8GB_128GB.jpg",
+    tags: ["movil", "google", "pixel", "android"],
+    detailsHtml: `<dl class="spec-list">
+      <div><dt>Modelo</dt><dd>Google Pixel 7a 5G 8GB 128GB, Carbón</dd></div>
+      <div><dt>Sistema operativo</dt><dd>Android 13</dd></div>
+      <div><dt>Pantalla</dt><dd>OLED FHD+ de 6.1 pulgadas, 2400 x 1080, 90 Hz, Gorilla Glass 3</dd></div>
+      <div><dt>Procesador</dt><dd>Google Tensor G2 con coprocesador Titan M2</dd></div>
+      <div><dt>Memoria</dt><dd>8 GB LPDDR5 RAM</dd></div>
+      <div><dt>Almacenamiento</dt><dd>128 GB UFS 3.1</dd></div>
+      <div><dt>Cámaras traseras</dt><dd>64 MP principal con OIS + 13 MP ultra gran angular de 120°</dd></div>
+      <div><dt>Cámara frontal</dt><dd>13 MP</dd></div>
+      <div><dt>Vídeo</dt><dd>Hasta 4K a 60 fps con la cámara trasera</dd></div>
+      <div><dt>Batería</dt><dd>4385 mAh, carga rápida e inalámbrica Qi</dd></div>
+      <div><dt>Conectividad</dt><dd>5G, Wi‑Fi 6E, Bluetooth 5.3, NFC y USB-C 3.2</dd></div>
+      <div><dt>SIM</dt><dd>Dual SIM: Nano SIM + eSIM</dd></div>
+      <div><dt>Resistencia</dt><dd>IP67 frente al agua y al polvo</dd></div>
+      <div><dt>Seguridad</dt><dd>Desbloqueo facial, lector de huellas bajo pantalla y Titan M2</dd></div>
+      <div><dt>Dimensiones y peso</dt><dd>152 x 72.9 x 9 mm; 193.5 g</dd></div>
+    </dl>`,
+  },
+{
+    id: "pc-mobile-samsung-galaxy-a53-5g",
+    title: "Samsung Galaxy A53 5G 6GB 128GB",
+    description: "Móvil con pantalla Super AMOLED de 6.5 pulgadas a 120 Hz, cámara principal de 64 MP con OIS y batería de 5000 mAh.",
+    group: "Móvil",
+    type: RESOURCE_TYPE.PRODUCT,
+    url: "https://www.amazon.es/dp/B09QH3JT6P",
+    image: "assets/images/pc/Samsung_Galaxy_A53_5G_128GB.jpg",
+    tags: ["movil", "samsung", "galaxy", "android"],
+    detailsHtml: `<dl class="spec-list">
+      <div><dt>Modelo</dt><dd>Samsung Galaxy A53 5G 6GB 128GB, negro</dd></div>
+      <div><dt>Sistema operativo</dt><dd>Android 12 con One UI 4.1</dd></div>
+      <div><dt>Pantalla</dt><dd>Super AMOLED FHD+ de 6.5 pulgadas, 2400 x 1080, 120 Hz, Gorilla Glass 5</dd></div>
+      <div><dt>Procesador</dt><dd>Exynos 1280 Octa-Core de 5 nm</dd></div>
+      <div><dt>Memoria</dt><dd>6 GB RAM</dd></div>
+      <div><dt>Almacenamiento</dt><dd>128 GB, ampliable mediante microSD hasta 1 TB</dd></div>
+      <div><dt>Cámaras traseras</dt><dd>64 MP principal con OIS + 12 MP ultra gran angular + 5 MP macro + 5 MP profundidad</dd></div>
+      <div><dt>Cámara frontal</dt><dd>32 MP</dd></div>
+      <div><dt>Vídeo</dt><dd>UHD 4K a 30 fps</dd></div>
+      <div><dt>Batería</dt><dd>5000 mAh, carga súper rápida de hasta 25 W</dd></div>
+      <div><dt>Conectividad</dt><dd>5G, Wi-Fi ac de doble banda, Bluetooth 5.1, NFC y USB-C 2.0</dd></div>
+      <div><dt>SIM</dt><dd>Dual SIM Nano-SIM; segunda ranura híbrida para SIM o microSD</dd></div>
+      <div><dt>Resistencia</dt><dd>IP67 frente al agua y al polvo</dd></div>
+      <div><dt>Seguridad</dt><dd>Lector óptico de huellas bajo la pantalla y Samsung Knox</dd></div>
+      <div><dt>Dimensiones y peso</dt><dd>159.6 x 74.8 x 8.1 mm; 189 g</dd></div>
+    </dl>`,
+  },
+{
     id: "pc-gaming-text",
     title: "Texto rapido Gaming",
     description: "Resumen corto para pegar especificaciones de gaming.",
