@@ -3,6 +3,7 @@ import { CATEGORY_ID } from "../data/constants.js";
 import { createDetailController } from "./detail.js";
 import { filterResources, warmContentIndex } from "./search.js";
 import { renderNavigation, renderResults, renderTypeOptions } from "./render.js";
+import { initTheme } from "./theme.js";
 
 const state = {
   category: CATEGORY_ID.DASHBOARD,
@@ -15,6 +16,7 @@ const elements = {
   results: document.querySelector("[data-results]"),
   search: document.querySelector("[data-search]"),
   typeFilter: document.querySelector("[data-type-filter]"),
+  themeSelect: document.querySelector("[data-theme-select]"),
   clearFilters: document.querySelector("[data-clear-filters]"),
   mobileMenu: document.querySelector("[data-mobile-menu]"),
   sidebar: document.querySelector("[data-sidebar]"),
@@ -26,6 +28,7 @@ const detailController = createDetailController(elements.dialog);
 init();
 
 function init() {
+  initTheme(elements.themeSelect);
   readRoute();
   bindEvents();
   render();
