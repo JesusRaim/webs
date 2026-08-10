@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Repositorio personal de recursos, comandos, herramientas, guias y documentacion.">
     <title>Mis Webs</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon-raim.png">
     <link rel="stylesheet" href="src/styles/main.css">
     <script type="module" src="src/scripts/app.js"></script>
   </head>
@@ -39,6 +40,16 @@
 
           <label class="visually-hidden" for="type-filter">Tipo</label>
           <select id="type-filter" class="type-filter" data-type-filter></select>
+
+          <label class="visually-hidden" for="theme-select">Tema</label>
+          <select id="theme-select" class="theme-filter" data-theme-select aria-label="Tema">
+            <option value="automatic">Automático</option>
+            <option value="dark">Tema oscuro</option>
+            <option value="spring">Primavera</option>
+            <option value="summer">Verano</option>
+            <option value="autumn">Otoño</option>
+            <option value="winter">Invierno</option>
+          </select>
 
           <button class="button button-ghost clear-button" type="button" data-clear-filters hidden>Limpiar</button>
         </header>
