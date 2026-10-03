@@ -11,6 +11,7 @@ export const aiResources = defineCategoryResources(CATEGORY_ID.AI, [
     contentPath: "src/content/knowledge/ia.html",
     tags: ["ia", "agentes", "prompts", "sdd", "mcp", "context7", "opencode"],
     pinned: true,
+    pinnedOrder: 2,
   },
 {
     id: "ai-swe-bench",
