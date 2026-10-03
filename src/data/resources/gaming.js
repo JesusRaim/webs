@@ -96,6 +96,17 @@ export const gamingResources = defineCategoryResources(CATEGORY_ID.GAMING, [
     tags: ["digimon", "ps1", "guia", "evoluciones"],
   },
 {
+    id: "games-digimon-world-2003",
+    title: "Guía Digimon World 2003",
+    description: "Evoluciones de Agumon, Renamon y Monmon con sus requisitos.",
+    group: "Guias",
+    type: RESOURCE_TYPE.ARTICLE,
+    contentPath: "src/content/guides/games/digimon-world-2003.html",
+    tags: ["digimon", "digimon-world-2003", "guía", "evoluciones", "agumon", "renamon", "monmon"],
+    pinned: true,
+    pinnedOrder: 3,
+  },
+{
     id: "games-duckstation",
     title: "DuckStation",
     description: "Emulador de PS1. Requiere fichero de BIOS en la ruta indicada por el asistente.",

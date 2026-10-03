@@ -1,4 +1,5 @@
 import { categories } from "../data/catalog.js";
+import { initEvolutionGoals } from "./evolution-goals.js";
 import { escapeHtml, typeLabel } from "./utils.js";
 import { fetchContent } from "./search.js";
 
@@ -93,6 +94,8 @@ function renderLoading() {
 }
 
 function enhanceLoadedContent(container) {
+  initEvolutionGoals(container);
+
   container.querySelectorAll("a[target='_blank']").forEach((link) => {
     link.setAttribute("rel", "noopener noreferrer");
   });
